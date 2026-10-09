@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException
+
 from ....schemas.target_price import TargetPriceRequest, TargetPriceResponse
-from ....services.target_price_service import TargetPriceService, FEATURE_METADATA
+from ....services.target_price_service import FEATURE_METADATA, TargetPriceService
 
 router = APIRouter()
 
@@ -12,7 +13,7 @@ def search_target_price_scenarios(request: TargetPriceRequest):
     try:
         return service.search_target_scenarios(request)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Target price search failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Target price search failed: {e!s}")
 
 
 @router.get("/capabilities", summary="Get Target Price Search Capabilities")

@@ -1,17 +1,17 @@
+from typing import Any
+
 import numpy as np
-import pandas as pd
-from typing import Dict, Any, List, Optional
 import shap
 
 
 class ModelExplainer:
     """SHAP-based Global and Local Model Explainer."""
 
-    def __init__(self, model, feature_names: List[str]):
+    def __init__(self, model, feature_names: list[str]):
         self.model = model
         self.feature_names = feature_names
         self.explainer = None
-        self.global_importance: List[Dict[str, Any]] = []
+        self.global_importance: list[dict[str, Any]] = []
         self.expected_value: float = 0.0
 
     def fit(self, X_sample: np.ndarray):
@@ -54,9 +54,9 @@ class ModelExplainer:
     def explain_instance(
         self,
         X_single_trans: np.ndarray,
-        raw_features: Dict[str, Any],
+        raw_features: dict[str, Any],
         top_k: int = 8,
-    ) -> List[Dict[str, Any]]:
+    ) -> list[dict[str, Any]]:
         """Computes local SHAP explanation for a single prediction instance."""
         if self.explainer is None:
             return []
@@ -81,5 +81,5 @@ class ModelExplainer:
         explanations.sort(key=lambda x: x["absolute_impact"], reverse=True)
         return explanations[:top_k]
 
-    def get_global_explanations(self) -> List[Dict[str, Any]]:
+    def get_global_explanations(self) -> list[dict[str, Any]]:
         return self.global_importance

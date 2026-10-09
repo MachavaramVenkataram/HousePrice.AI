@@ -1,18 +1,16 @@
-import os
 import copy
 import logging
-from typing import Dict, Any, List, Optional
+from typing import Any
 
-from ..schemas.prediction import PropertyFeatures, PredictionInterval
+from ..schemas.prediction import PropertyFeatures
 from ..schemas.target_price import (
+    ChangedFeatureItem,
     TargetPriceRequest,
     TargetPriceResponse,
     TargetPriceScenario,
-    ChangedFeatureItem,
-    FeatureConstraint,
 )
+from .model_applicability_service import ModelApplicabilityService
 from .prediction_service import PredictionService
-from .model_applicability_service import ModelApplicabilityService, SUPPORTED_CATEGORIES
 
 logger = logging.getLogger(__name__)
 
@@ -99,7 +97,7 @@ class TargetPriceService:
         price_ratio = target / max(base_price, 10000.0)
 
         # 4. Generate Structured Candidate Configurations
-        candidates: List[Dict[str, Any]] = []
+        candidates: list[dict[str, Any]] = []
 
         # Candidate Strategy A: Proportional Scaling on Space & Quality
         # Vary living area and overall quality along an empirical path
@@ -196,7 +194,7 @@ class TargetPriceService:
             candidates.append(cand)
 
         # 5. Evaluate All Candidates with the Real Inference Pipeline
-        evaluated_scenarios: List[TargetPriceScenario] = []
+        evaluated_scenarios: list[TargetPriceScenario] = []
         seen_keys = set()
 
         for cand_dict in candidates:
@@ -223,7 +221,7 @@ class TargetPriceService:
             pct_diff = (abs_diff / target) * 100.0
 
             # Compute Changed Features List
-            changed_items: List[ChangedFeatureItem] = []
+            changed_items: list[ChangedFeatureItem] = []
             feature_change_penalty = 0.0
 
             for feat, new_val in cand_dict.items():
@@ -318,7 +316,7 @@ class TargetPriceService:
             explanation=explanation,
         )
 
-    def _generate_headline(self, changed_items: List[ChangedFeatureItem], pred_price: float, target: float) -> str:
+    def _generate_headline(self, changed_items: list[ChangedFeatureItem], pred_price: float, target: float) -> str:
         names = [item.feature for item in changed_items]
         if "GrLivArea" in names and "OverallQual" in names:
             return "Living Area & Material Quality Optimization"

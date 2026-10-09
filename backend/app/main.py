@@ -1,7 +1,7 @@
-import sys
-import os
-import time
 import logging
+import os
+import sys
+import time
 from contextlib import asynccontextmanager
 
 # Ensure workspace root is in sys.path so pickled artifacts referencing 'backend.*' unpickle cleanly
@@ -11,12 +11,10 @@ if ROOT_DIR not in sys.path:
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
 
-from .core.config import settings
-from .core.database import engine, Base
-from .db.models import PredictionRecord, SavedScenario
 from .api.v1.router import api_router
+from .core.config import settings
+from .core.database import Base, engine
 from .services.prediction_service import PredictionService
 
 # Setup structured logging

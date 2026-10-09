@@ -1,6 +1,17 @@
 import pytest
+import urllib.request
 from playwright.sync_api import sync_playwright
 
+
+def is_frontend_running() -> bool:
+    try:
+        with urllib.request.urlopen("http://localhost:3000", timeout=2) as resp:
+            return resp.status == 200
+    except Exception:
+        return False
+
+
+@pytest.mark.skipif(not is_frontend_running(), reason="Frontend dev server not running on http://localhost:3000")
 def test_full_browser_prediction_and_scenarios():
     """E2E Playwright test verifying the complete user workflow in real browser."""
     console_errors = []

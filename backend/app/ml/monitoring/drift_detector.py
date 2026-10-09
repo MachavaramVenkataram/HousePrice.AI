@@ -1,9 +1,10 @@
+import json
+import os
+from typing import Any
+
 import numpy as np
 import pandas as pd
 from scipy import stats
-from typing import Dict, Any, List, Optional
-import json
-import os
 
 DRIFT_BASELINE_PATH = os.path.join(
     os.path.dirname(__file__), "..", "artifacts", "drift_baseline.json"
@@ -15,11 +16,11 @@ class DataDriftDetector:
 
     def __init__(self, p_value_threshold: float = 0.05):
         self.p_value_threshold = p_value_threshold
-        self.baseline_stats: Dict[str, Dict[str, float]] = {}
-        self.reference_samples: Dict[str, List[float]] = {}
+        self.baseline_stats: dict[str, dict[str, float]] = {}
+        self.reference_samples: dict[str, list[float]] = {}
         self._load_baseline()
 
-    def fit_reference(self, df_train: pd.DataFrame, numeric_features: List[str]):
+    def fit_reference(self, df_train: pd.DataFrame, numeric_features: list[str]):
         """Save training distribution reference statistics and quantiles."""
         self.reference_samples = {}
         self.baseline_stats = {}
@@ -57,7 +58,7 @@ class DataDriftDetector:
             except Exception:
                 pass
 
-    def check_drift_single(self, raw_input: Dict[str, Any]) -> Dict[str, Any]:
+    def check_drift_single(self, raw_input: dict[str, Any]) -> dict[str, Any]:
         """Checks if a single prediction payload falls outside empirical training ranges or 3-sigma bounds.
         
         Performs formal out-of-distribution (OOD) detection based on empirical min/max envelopes
@@ -133,7 +134,7 @@ class DataDriftDetector:
             "messages": messages,
         }
 
-    def check_batch_drift(self, df_production: pd.DataFrame) -> Dict[str, Any]:
+    def check_batch_drift(self, df_production: pd.DataFrame) -> dict[str, Any]:
         """Runs Kolmogorov-Smirnov test between batch inference features and training baseline."""
         drifted_features = []
         feature_reports = []

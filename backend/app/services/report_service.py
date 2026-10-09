@@ -1,17 +1,19 @@
 import io
-from datetime import datetime, timezone
-from reportlab.lib.pagesizes import letter
+from datetime import UTC, datetime
+
 from reportlab.lib import colors
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.platypus import (
-    SimpleDocTemplate,
+    HRFlowable,
     Paragraph,
+    SimpleDocTemplate,
     Spacer,
     Table,
     TableStyle,
-    HRFlowable,
 )
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+
 from ..schemas.prediction import PredictionResponse, PropertyFeatures
 
 
@@ -119,7 +121,7 @@ def generate_property_valuation_pdf(
 
     story.append(Paragraph("HOUSEPRICE AI ESTIMATION REPORT", title_style))
     story.append(Paragraph(
-        f"Generated on {datetime.now(timezone.utc).strftime('%B %d, %Y at %H:%M UTC')} | "
+        f"Generated on {datetime.now(UTC).strftime('%B %d, %Y at %H:%M UTC')} | "
         f"Model: {model_name} ({model_ver}) | "
         f"Dataset: Ames Housing | Reference: HPAI-{pred_id or 'EST'}",
         subtitle_style

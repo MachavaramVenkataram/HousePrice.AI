@@ -1,5 +1,6 @@
+from typing import Any
+
 import numpy as np
-from typing import Dict, Any, List, Optional, Tuple, Union
 
 
 class ConformalPredictor:
@@ -46,7 +47,7 @@ class ConformalPredictor:
         self.is_calibrated: bool = False
         
         # Stored empirical evaluation metrics on held-out test set
-        self.evaluation_metrics: Dict[str, Dict[str, float]] = {}
+        self.evaluation_metrics: dict[str, dict[str, float]] = {}
         
         # Backwards compatibility attributes
         self.confidence_level: float = default_coverage
@@ -55,8 +56,8 @@ class ConformalPredictor:
 
     def calibrate(
         self,
-        y_true: Union[np.ndarray, List[float]],
-        y_pred: Union[np.ndarray, List[float]],
+        y_true: np.ndarray | list[float],
+        y_pred: np.ndarray | list[float],
     ) -> "ConformalPredictor":
         """Compute absolute nonconformity residuals on holdout calibration set."""
         y_t = np.asarray(y_true, dtype=float).ravel()
@@ -92,10 +93,10 @@ class ConformalPredictor:
 
     def evaluate_test_set(
         self,
-        y_test: Union[np.ndarray, List[float]],
-        y_test_pred: Union[np.ndarray, List[float]],
-        coverage_levels: Optional[List[float]] = None,
-    ) -> Dict[str, Dict[str, float]]:
+        y_test: np.ndarray | list[float],
+        y_test_pred: np.ndarray | list[float],
+        coverage_levels: list[float] | None = None,
+    ) -> dict[str, dict[str, float]]:
         """Evaluates empirical coverage and mean interval width on held-out test data."""
         if not self.is_calibrated:
             raise RuntimeError("ConformalPredictor must be calibrated before evaluating test set.")
@@ -151,9 +152,9 @@ class ConformalPredictor:
 
     def predict_interval(
         self,
-        y_pred: Union[float, np.ndarray],
-        coverage_level: Optional[float] = None,
-    ) -> Dict[str, Any]:
+        y_pred: float | np.ndarray,
+        coverage_level: float | None = None,
+    ) -> dict[str, Any]:
         """Calculates prediction interval [lower, upper] for given point prediction(s)."""
         if not self.is_calibrated:
             raise RuntimeError("ConformalPredictor must be calibrated before generating intervals.")
@@ -220,16 +221,16 @@ class MultiModelConformalManager:
     unsupported models return an explicit unavailable status without fabrication.
     """
 
-    def __init__(self, primary_model_name: Optional[str] = None):
-        self.predictors: Dict[str, ConformalPredictor] = {}
-        self.primary_model_name: Optional[str] = primary_model_name
+    def __init__(self, primary_model_name: str | None = None):
+        self.predictors: dict[str, ConformalPredictor] = {}
+        self.primary_model_name: str | None = primary_model_name
 
     def register(self, model_name: str, predictor: ConformalPredictor, is_primary: bool = False):
         self.predictors[model_name] = predictor
         if is_primary or self.primary_model_name is None:
             self.primary_model_name = model_name
 
-    def get_predictor(self, model_name: Optional[str] = None) -> Optional[ConformalPredictor]:
+    def get_predictor(self, model_name: str | None = None) -> ConformalPredictor | None:
         if model_name is None:
             model_name = self.primary_model_name
         if model_name is None:
@@ -269,10 +270,10 @@ class MultiModelConformalManager:
 
     def predict_interval(
         self,
-        y_pred: Union[float, np.ndarray],
-        coverage_level: Optional[float] = None,
-        model_name: Optional[str] = None,
-    ) -> Optional[Dict[str, Any]]:
+        y_pred: float | np.ndarray,
+        coverage_level: float | None = None,
+        model_name: str | None = None,
+    ) -> dict[str, Any] | None:
         """Calculates interval for specified model or primary model."""
         predictor = self.get_predictor(model_name)
         if predictor is None or not predictor.is_calibrated:

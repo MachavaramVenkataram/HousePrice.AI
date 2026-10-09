@@ -1,4 +1,5 @@
-from typing import Dict, Any, List, Optional, Literal
+from typing import Any, Literal
+
 from pydantic import BaseModel, Field
 
 
@@ -8,7 +9,7 @@ class ApplicabilityCheck(BaseModel):
         description="Status of this individual applicability check"
     )
     message: str = Field(description="Clear, non-technical explanation of the check outcome")
-    details: Optional[Dict[str, Any]] = Field(default=None, description="Detailed technical telemetry and stats")
+    details: dict[str, Any] | None = Field(default=None, description="Detailed technical telemetry and stats")
 
 
 class DatasetScopeInfo(BaseModel):
@@ -20,7 +21,7 @@ class DatasetScopeInfo(BaseModel):
     market_warning: str = Field(
         default="This model is trained strictly on historical residential sales in Ames, Iowa between 2006 and 2010. It cannot be used as an appraisal or reliable valuation for other geographic markets (such as Indian real estate or European housing markets) without domain retraining."
     )
-    known_limitations: List[str] = Field(
+    known_limitations: list[str] = Field(
         default_factory=lambda: [
             "Geographic specificity: Strictly calibrated for Ames, Iowa residential market.",
             "Temporal window: Reflects macroeconomic conditions between 2006 and 2010.",
@@ -35,7 +36,7 @@ class ModelApplicabilityResponse(BaseModel):
         description="Overall model applicability status"
     )
     overall_summary: str = Field(description="Concise summary for user decision support")
-    checks: List[ApplicabilityCheck] = Field(description="Individual granular validation checks")
-    limitations: List[str] = Field(description="Applicable model and dataset limitations")
+    checks: list[ApplicabilityCheck] = Field(description="Individual granular validation checks")
+    limitations: list[str] = Field(description="Applicable model and dataset limitations")
     scope: DatasetScopeInfo = Field(default_factory=DatasetScopeInfo)
-    actionable_guidance: Optional[str] = Field(default=None, description="Actionable recommendation for the user")
+    actionable_guidance: str | None = Field(default=None, description="Actionable recommendation for the user")

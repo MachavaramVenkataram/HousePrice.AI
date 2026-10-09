@@ -1,13 +1,14 @@
 import json
 import logging
-from typing import Dict, Any, List, Optional
+
 from sqlalchemy.orm import Session
+
 from ..db.models import PropertyProfileRecord
 from ..schemas.decision import (
-    PropertyProfileCreate,
-    PropertyProfileResponse,
     PropertyProfileComparisonItem,
     PropertyProfileComparisonResponse,
+    PropertyProfileCreate,
+    PropertyProfileResponse,
 )
 from .prediction_service import PredictionService
 
@@ -43,7 +44,7 @@ class ProfileService:
         db.refresh(rec)
         return PropertyProfileResponse(**rec.to_dict())
 
-    def list_profiles(self, db: Session, limit: int = 20) -> List[PropertyProfileResponse]:
+    def list_profiles(self, db: Session, limit: int = 20) -> list[PropertyProfileResponse]:
         """Lists user property profiles ordered by creation date."""
         recs = db.query(PropertyProfileRecord).order_by(PropertyProfileRecord.created_at.desc()).limit(limit).all()
         return [PropertyProfileResponse(**r.to_dict()) for r in recs]
@@ -57,11 +58,11 @@ class ProfileService:
         db.commit()
         return True
 
-    def compare_profiles(self, profile_ids: List[int], db: Session) -> PropertyProfileComparisonResponse:
+    def compare_profiles(self, profile_ids: list[int], db: Session) -> PropertyProfileComparisonResponse:
         """Compares multiple saved property profiles side by side."""
         recs = db.query(PropertyProfileRecord).filter(PropertyProfileRecord.id.in_(profile_ids)).all()
         
-        items: List[PropertyProfileComparisonItem] = []
+        items: list[PropertyProfileComparisonItem] = []
         for r in recs:
             data = r.to_dict()
             f = data.get("features", {})

@@ -1,25 +1,26 @@
-import os
-import time
 import json
 import logging
-from datetime import datetime, timezone
-from typing import Dict, Any, List, Optional
+import os
+import time
+from datetime import UTC, datetime
+from typing import Any
+
 from sqlalchemy.orm import Session
 
-from ..schemas.release import (
-    ModelCandidateSummary,
-    ReleaseValidationCriterion,
-    ModelValidationResult,
-    ModelComparisonResult,
-    ModelComparisonMetricRow,
-    PromotionRequest,
-    CancelCandidateRequest,
-    RollbackRequest,
-    ModelReleaseHistoryItem,
-    ModelReleaseStatusResponse,
-)
 from ..db.models import ModelReleaseRecord
 from ..ml.models.registry import ModelRegistryManager
+from ..schemas.release import (
+    CancelCandidateRequest,
+    ModelCandidateSummary,
+    ModelComparisonMetricRow,
+    ModelComparisonResult,
+    ModelReleaseHistoryItem,
+    ModelReleaseStatusResponse,
+    ModelValidationResult,
+    PromotionRequest,
+    ReleaseValidationCriterion,
+    RollbackRequest,
+)
 from .prediction_service import PredictionService
 
 logger = logging.getLogger(__name__)
@@ -57,7 +58,7 @@ class ModelReleaseService:
             cls._instance = ModelReleaseService()
         return cls._instance
 
-    def _get_benchmark_metrics(self) -> Dict[str, Dict[str, Any]]:
+    def _get_benchmark_metrics(self) -> dict[str, dict[str, Any]]:
         bench_path = os.path.join(ARTIFACTS_DIR, "benchmark_results.json")
         if os.path.exists(bench_path):
             try:
@@ -68,16 +69,16 @@ class ModelReleaseService:
                 logger.warning(f"Could not load benchmark results: {e}")
         return {}
 
-    def get_release_status(self, db: Optional[Session] = None) -> ModelReleaseStatusResponse:
+    def get_release_status(self, db: Session | None = None) -> ModelReleaseStatusResponse:
         registry = self.registry_mgr.load_registry()
         current_prod_name = registry.get("current_production_model", "CatBoost")
         prod_ver = registry.get("production_version", "v1.0.0")
         baseline_name = registry.get("baseline_model", "Linear Regression")
         registered = registry.get("registered_models", [])
 
-        current_summary: Optional[ModelCandidateSummary] = None
-        baseline_summary: Optional[ModelCandidateSummary] = None
-        candidates: List[ModelCandidateSummary] = []
+        current_summary: ModelCandidateSummary | None = None
+        baseline_summary: ModelCandidateSummary | None = None
+        candidates: list[ModelCandidateSummary] = []
 
         for m in registered:
             is_prod = (m["name"] == current_prod_name)
@@ -91,7 +92,7 @@ class ModelReleaseService:
                 artifact_path=m.get("artifact_path", ""),
                 parameters=m.get("parameters", {}),
                 description=m.get("description", ""),
-                registered_at=m.get("registered_at", datetime.now(timezone.utc).isoformat()),
+                registered_at=m.get("registered_at", datetime.now(UTC).isoformat()),
                 is_production=is_prod,
                 is_candidate=is_cand,
             )
@@ -112,12 +113,12 @@ class ModelReleaseService:
                 test_metrics={"rmse": 28945.66, "mae": 15945.06, "r2": 0.8908, "observed_coverage_90": 0.9212},
                 artifact_path=os.path.join(ARTIFACTS_DIR, "best_model.joblib"),
                 description="Current active production model",
-                registered_at=datetime.now(timezone.utc).isoformat(),
+                registered_at=datetime.now(UTC).isoformat(),
                 is_production=True,
             )
 
         # Load audit history
-        recent_releases: List[ModelReleaseHistoryItem] = []
+        recent_releases: list[ModelReleaseHistoryItem] = []
         rollback_target = None
         can_rollback = False
 
@@ -163,7 +164,7 @@ class ModelReleaseService:
             recent_releases=recent_releases,
         )
 
-    def compare_models(self, candidate_name: str, baseline_or_prod: Optional[str] = None) -> ModelComparisonResult:
+    def compare_models(self, candidate_name: str, baseline_or_prod: str | None = None) -> ModelComparisonResult:
         benchmarks = self._get_benchmark_metrics()
         registry = self.registry_mgr.load_registry()
         current_name = baseline_or_prod or registry.get("current_production_model", "CatBoost")
@@ -350,10 +351,10 @@ class ModelReleaseService:
             preprocessing_compatible=prep_compatible,
             interval_coverage=cov_90,
             mean_interval_width=mean_width,
-            evaluated_at=datetime.now(timezone.utc).isoformat(),
+            evaluated_at=datetime.now(UTC).isoformat(),
         )
 
-    def approve_promotion(self, request: PromotionRequest, db: Optional[Session] = None) -> ModelReleaseStatusResponse:
+    def approve_promotion(self, request: PromotionRequest, db: Session | None = None) -> ModelReleaseStatusResponse:
         registry = self.registry_mgr.load_registry()
         previous_model = registry.get("current_production_model", "CatBoost")
         previous_version = registry.get("production_version", "v1.0.0")
@@ -407,7 +408,7 @@ class ModelReleaseService:
 
         return self.get_release_status(db=db)
 
-    def cancel_candidate(self, request: CancelCandidateRequest, db: Optional[Session] = None) -> ModelReleaseStatusResponse:
+    def cancel_candidate(self, request: CancelCandidateRequest, db: Session | None = None) -> ModelReleaseStatusResponse:
         registry = self.registry_mgr.load_registry()
         models = registry.get("registered_models", [])
         for m in models:
@@ -432,7 +433,7 @@ class ModelReleaseService:
 
         return self.get_release_status(db=db)
 
-    def rollback(self, request: RollbackRequest, db: Optional[Session] = None) -> ModelReleaseStatusResponse:
+    def rollback(self, request: RollbackRequest, db: Session | None = None) -> ModelReleaseStatusResponse:
         registry = self.registry_mgr.load_registry()
         current_model = registry.get("current_production_model", "CatBoost")
         current_version = registry.get("production_version", "v1.0.0")

@@ -1,7 +1,7 @@
 import copy
-from typing import Dict, Any, List, Optional
-from ..schemas.prediction import PropertyFeatures
+
 from ..schemas.decision import ImprovementScenario, ImprovementSimulationResponse
+from ..schemas.prediction import PropertyFeatures
 from .prediction_service import PredictionService
 
 
@@ -20,7 +20,7 @@ class ScenarioService:
     def simulate_improvements(
         self,
         base_features: PropertyFeatures,
-        renovation_costs: Optional[Dict[str, float]] = None,
+        renovation_costs: dict[str, float] | None = None,
     ) -> ImprovementSimulationResponse:
         """Simulates structured physical property improvements using real model inference."""
         costs = renovation_costs or {}
@@ -74,7 +74,7 @@ class ScenarioService:
             },
         ]
 
-        scenarios: List[ImprovementScenario] = []
+        scenarios: list[ImprovementScenario] = []
         for item in scenarios_def:
             s_feat = copy.deepcopy(base_features)
             item["modify"](s_feat)

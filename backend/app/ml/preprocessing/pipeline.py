@@ -1,16 +1,16 @@
+
 import numpy as np
 import pandas as pd
-from typing import Tuple, List, Optional
 from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
+from ..data.loader import CATEGORICAL_FEATURES, NUMERIC_FEATURES
 from .features import FeatureEngineer
-from ..data.loader import NUMERIC_FEATURES, CATEGORICAL_FEATURES
 
 
-def create_preprocessor(numeric_cols: List[str], categorical_cols: List[str]) -> ColumnTransformer:
+def create_preprocessor(numeric_cols: list[str], categorical_cols: list[str]) -> ColumnTransformer:
     """Constructs a scikit-learn ColumnTransformer.
     
     Numeric pipeline:
@@ -56,7 +56,7 @@ class HousingPreprocessingPipeline:
         self.categorical_cols = CATEGORICAL_FEATURES
         self.preprocessor = create_preprocessor(self.all_numeric_cols, self.categorical_cols)
         self.is_fitted = False
-        self.feature_names_out: List[str] = []
+        self.feature_names_out: list[str] = []
 
     def fit(self, X: pd.DataFrame, y=None) -> "HousingPreprocessingPipeline":
         X_engineered = self.feature_engineer.transform(X)
@@ -80,7 +80,7 @@ class HousingPreprocessingPipeline:
     def fit_transform(self, X: pd.DataFrame, y=None) -> np.ndarray:
         return self.fit(X, y).transform(X)
 
-    def get_feature_names(self) -> List[str]:
+    def get_feature_names(self) -> list[str]:
         return self.feature_names_out
 
 

@@ -1,22 +1,21 @@
 import io
-import csv
+
 import pandas as pd
-from typing import Dict, Any, List, Optional
-from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Query, Response
+from fastapi import APIRouter, Depends, File, HTTPException, Query, Response, UploadFile
 from sqlalchemy.orm import Session
 
 from ....core.database import get_db
+from ....db.models import PredictionRecord
 from ....schemas.prediction import (
-    PropertyFeatures,
+    FeedbackRequest,
     PredictionRequest,
     PredictionResponse,
-    WhatIfRequest,
-    WhatIfResponse,
+    PropertyFeatures,
     SensitivityRequest,
     SensitivityResponse,
-    FeedbackRequest,
+    WhatIfRequest,
+    WhatIfResponse,
 )
-from ....db.models import PredictionRecord
 from ....services.prediction_service import PredictionService
 
 router = APIRouter()
@@ -38,7 +37,7 @@ def predict_property_price(
         )
         return response
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Unable to generate a prediction: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Unable to generate a prediction: {e!s}")
 
 
 
@@ -55,7 +54,7 @@ def what_if_simulation(
             model_override=request.model_override,
         )
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Simulation error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Simulation error: {e!s}")
 
 
 
@@ -74,7 +73,7 @@ def sensitivity_analysis(
             steps=request.steps,
         )
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Sensitivity analysis error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Sensitivity analysis error: {e!s}")
 
 
 @router.post("/feedback", summary="Record User Prediction Feedback")
@@ -116,7 +115,7 @@ async def batch_csv_prediction(
     try:
         df_upload = pd.read_csv(io.BytesIO(contents))
     except Exception as e:
-        raise HTTPException(status_code=400, detail=f"Invalid CSV structure: {str(e)}")
+        raise HTTPException(status_code=400, detail=f"Invalid CSV structure: {e!s}")
 
     service = PredictionService.get_instance()
     results = []

@@ -1,10 +1,11 @@
-import optuna
 import logging
+from typing import Any
+
 import numpy as np
+import optuna
 import pandas as pd
 import xgboost as xgb
 from sklearn.model_selection import KFold
-from typing import Dict, Any, Tuple
 
 from ..preprocessing.pipeline import HousingPreprocessingPipeline, TargetTransformer
 
@@ -18,7 +19,7 @@ def tune_xgboost_optuna(
     n_trials: int = 15,
     n_splits: int = 3,
     random_state: int = 42,
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     """Run Optuna Bayesian hyperparameter optimization on XGBoost minimizing CV RMSE."""
     y_arr = np.asarray(y, dtype=float)
     kf = KFold(n_splits=n_splits, shuffle=True, random_state=random_state)

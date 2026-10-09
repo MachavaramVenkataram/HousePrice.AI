@@ -1,17 +1,17 @@
 from .loader import (
-    load_dataset,
+    CATEGORICAL_FEATURES,
+    NUMERIC_FEATURES,
+    TARGET,
     fetch_and_save_dataset,
     get_data_profile,
-    NUMERIC_FEATURES,
-    CATEGORICAL_FEATURES,
-    TARGET,
+    load_dataset,
 )
 
 __all__ = [
-    "load_dataset",
+    "CATEGORICAL_FEATURES",
+    "NUMERIC_FEATURES",
+    "TARGET",
     "fetch_and_save_dataset",
     "get_data_profile",
-    "NUMERIC_FEATURES",
-    "CATEGORICAL_FEATURES",
-    "TARGET",
+    "load_dataset",
 ]

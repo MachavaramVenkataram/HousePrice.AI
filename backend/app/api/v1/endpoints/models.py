@@ -1,8 +1,10 @@
-import os
 import json
-from typing import Dict, Any, List, Optional
-from fastapi import APIRouter, HTTPException, Depends, Query, Body
+import os
+from typing import Any
+
+from fastapi import APIRouter, Body, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
+
 from ....core.database import get_db
 from ....ml.models.registry import ModelRegistryManager
 
@@ -94,11 +96,11 @@ def get_model_release_status(db: Session = Depends(get_db)):
     try:
         return service.get_release_status(db=db)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Failed to fetch model release status: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to fetch model release status: {e!s}")
 
 
 @router.api_route("/releases/compare", methods=["GET", "POST"], summary="Compare Candidate Model against Production")
-def compare_release_models(candidate_name: str = Query(None), current_name: str = Query(None), body: Optional[dict] = Body(None)):
+def compare_release_models(candidate_name: str = Query(None), current_name: str = Query(None), body: dict | None = Body(None)):
     """Generates a side-by-side technical metric comparison between candidate model and active production baseline."""
     from ....services.model_release_service import ModelReleaseService
     service = ModelReleaseService.get_instance()
@@ -109,11 +111,11 @@ def compare_release_models(candidate_name: str = Query(None), current_name: str 
     try:
         return service.compare_models(candidate_name=c_name, baseline_or_prod=curr_name)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Model comparison failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Model comparison failed: {e!s}")
 
 
 @router.api_route("/releases/validate", methods=["GET", "POST"], summary="Run Automated Candidate Release Validation")
-def validate_release_candidate(candidate_name: str = Query(None), body: Optional[dict] = Body(None)):
+def validate_release_candidate(candidate_name: str = Query(None), body: dict | None = Body(None)):
     """Evaluates candidate model against the 5 documented technical promotion criteria (RMSE, R², Coverage, Latency, Compatibility)."""
     from ....services.model_release_service import ModelReleaseService
     service = ModelReleaseService.get_instance()
@@ -125,7 +127,7 @@ def validate_release_candidate(candidate_name: str = Query(None), body: Optional
     except ValueError as ve:
         raise HTTPException(status_code=400, detail=str(ve))
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Candidate validation failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Candidate validation failed: {e!s}")
 
 
 @router.post("/releases/promote", summary="Approve and Execute Model Promotion")
@@ -134,8 +136,8 @@ def approve_model_promotion(
     db: Session = Depends(get_db),
 ):
     """Authorizes and executes production promotion of a validated candidate model with zero-downtime hot swap."""
-    from ....services.model_release_service import ModelReleaseService
     from ....schemas.release import PromotionRequest
+    from ....services.model_release_service import ModelReleaseService
     service = ModelReleaseService.get_instance()
     try:
         req = PromotionRequest(**request)
@@ -143,7 +145,7 @@ def approve_model_promotion(
     except ValueError as ve:
         raise HTTPException(status_code=400, detail=str(ve))
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Model promotion failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Model promotion failed: {e!s}")
 
 
 @router.post("/releases/cancel", summary="Reject Candidate Model")
@@ -152,14 +154,14 @@ def cancel_release_candidate(
     db: Session = Depends(get_db),
 ):
     """Rejects candidate model and records reason in audit registry."""
-    from ....services.model_release_service import ModelReleaseService
     from ....schemas.release import CancelCandidateRequest
+    from ....services.model_release_service import ModelReleaseService
     service = ModelReleaseService.get_instance()
     try:
         req = CancelCandidateRequest(**request)
         return service.cancel_candidate(req, db=db)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Failed to cancel candidate: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to cancel candidate: {e!s}")
 
 
 @router.post("/releases/rollback", summary="Rollback to Previous Production Model")
@@ -168,12 +170,12 @@ def rollback_production_model(
     db: Session = Depends(get_db),
 ):
     """Reverts active production deployment to the previously approved model version with zero downtime."""
-    from ....services.model_release_service import ModelReleaseService
     from ....schemas.release import RollbackRequest
+    from ....services.model_release_service import ModelReleaseService
     service = ModelReleaseService.get_instance()
     try:
         req = RollbackRequest(**request)
         return service.rollback(req, db=db)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Rollback failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Rollback failed: {e!s}")
 

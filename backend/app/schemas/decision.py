@@ -1,6 +1,8 @@
-from typing import Dict, Any, List, Optional, Union
-from pydantic import BaseModel, Field, ConfigDict
-from .prediction import PropertyFeatures, FeatureContribution, PredictionInterval
+from typing import Any
+
+from pydantic import BaseModel, Field
+
+from .prediction import PredictionInterval, PropertyFeatures
 
 
 class PropertyProfile(BaseModel):
@@ -17,7 +19,7 @@ class PropertyProfile(BaseModel):
     neighborhood: str
     garage_cars: int
     summary_text: str
-    feature_chips: List[str]
+    feature_chips: list[str]
 
 
 class InputQualityAssessment(BaseModel):
@@ -25,21 +27,21 @@ class InputQualityAssessment(BaseModel):
     status: str = Field(description="'Excellent', 'Good', or 'Limited'")
     score_label: str
     is_out_of_distribution: bool
-    warnings: List[str] = Field(default_factory=list)
-    passed_checks: List[str] = Field(default_factory=list)
-    recommendation: Optional[str] = None
+    warnings: list[str] = Field(default_factory=list)
+    passed_checks: list[str] = Field(default_factory=list)
+    recommendation: str | None = None
 
 
 class ModelPredictionSummary(BaseModel):
     model_name: str
     predicted_price: float
-    lower_bound: Optional[float] = None
-    upper_bound: Optional[float] = None
+    lower_bound: float | None = None
+    upper_bound: float | None = None
 
 
 class ModelConsensus(BaseModel):
     """Consensus across multiple regression models."""
-    models: List[ModelPredictionSummary]
+    models: list[ModelPredictionSummary]
     mean_estimate: float
     median_estimate: float
     min_estimate: float
@@ -47,7 +49,7 @@ class ModelConsensus(BaseModel):
     spread_amount: float
     spread_percentage: float
     agreement_level: str = Field(description="'High Agreement', 'Moderate Agreement', or 'Model Disagreement'")
-    disagreement_warning: Optional[str] = None
+    disagreement_warning: str | None = None
 
 
 class ReliabilityDimension(BaseModel):
@@ -60,8 +62,8 @@ class EstimateReliabilityAssessment(BaseModel):
     """Comprehensive estimate reliability based on transparent empirical evidence."""
     overall_reliability: str = Field(description="'High', 'Medium', or 'Limited'")
     summary: str
-    dimensions: List[ReliabilityDimension]
-    consensus: Optional[ModelConsensus] = None
+    dimensions: list[ReliabilityDimension]
+    consensus: ModelConsensus | None = None
 
 
 class SimilarPropertyComparable(BaseModel):
@@ -79,15 +81,15 @@ class SimilarPropertyComparable(BaseModel):
     price_per_sqft: float
     similarity_pct: float
     distance: float
-    key_match_attributes: List[str] = Field(default_factory=list)
+    key_match_attributes: list[str] = Field(default_factory=list)
     why_selected: str = ""
-    similarity_features: Dict[str, Any] = Field(default_factory=dict)
+    similarity_features: dict[str, Any] = Field(default_factory=dict)
     dataset_source: str = "Ames Housing Dataset (2006-2010)"
 
 
 class ComparableInsights(BaseModel):
     """Insights comparing the model estimate against actual historical dataset records."""
-    comparables: List[SimilarPropertyComparable]
+    comparables: list[SimilarPropertyComparable]
     comparable_count: int
     comparable_median_price: float
     comparable_mean_price: float
@@ -114,7 +116,7 @@ class AffordabilityRequest(BaseModel):
 
 class AffordabilityCalculation(BaseModel):
     """Illustrative mathematical mortgage and budget calculation."""
-    scenario_label: Optional[str] = "Standard Scenario"
+    scenario_label: str | None = "Standard Scenario"
     budget: float
     estimated_price: float
     down_payment: float
@@ -140,7 +142,7 @@ class AffordabilityCalculation(BaseModel):
 
 class MultiBudgetComparisonRequest(BaseModel):
     estimated_price: float = Field(default=245000.0, ge=10000.0)
-    scenarios: List[AffordabilityRequest]
+    scenarios: list[AffordabilityRequest]
 
 
 class ImprovementScenario(BaseModel):
@@ -149,16 +151,16 @@ class ImprovementScenario(BaseModel):
     description: str
     modified_features: PropertyFeatures
     potential_estimate: float
-    potential_interval: Optional[PredictionInterval] = None
+    potential_interval: PredictionInterval | None = None
     modeled_difference: float
     top_driver: str
-    user_renovation_cost: Optional[float] = None
-    net_modeled_scenario_difference: Optional[float] = None
+    user_renovation_cost: float | None = None
+    net_modeled_scenario_difference: float | None = None
 
 
 class ImprovementSimulationResponse(BaseModel):
     current_estimate: float
-    scenarios: List[ImprovementScenario]
+    scenarios: list[ImprovementScenario]
     disclaimer: str = (
         "Model-estimated change based on statistical relationships in the historical training data. "
         "Not a guaranteed renovation return or contractor estimate."
@@ -167,34 +169,34 @@ class ImprovementSimulationResponse(BaseModel):
 
 class SavedScenarioCreate(BaseModel):
     name: str
-    description: Optional[str] = None
+    description: str | None = None
     features: PropertyFeatures
     predicted_price: float
-    lower_bound: Optional[float] = None
-    upper_bound: Optional[float] = None
+    lower_bound: float | None = None
+    upper_bound: float | None = None
     model_name: str = "CatBoost"
     model_version: str = "v1.0.0"
 
 
 class SavedScenarioUpdate(BaseModel):
-    name: Optional[str] = None
-    description: Optional[str] = None
-    features: Optional[PropertyFeatures] = None
-    predicted_price: Optional[float] = None
-    lower_bound: Optional[float] = None
-    upper_bound: Optional[float] = None
-    model_name: Optional[str] = None
-    model_version: Optional[str] = None
+    name: str | None = None
+    description: str | None = None
+    features: PropertyFeatures | None = None
+    predicted_price: float | None = None
+    lower_bound: float | None = None
+    upper_bound: float | None = None
+    model_name: str | None = None
+    model_version: str | None = None
 
 
 class SavedScenarioResponse(BaseModel):
     id: int
     name: str
-    description: Optional[str] = None
-    features: Dict[str, Any]
+    description: str | None = None
+    features: dict[str, Any]
     predicted_price: float
-    lower_bound: Optional[float] = None
-    upper_bound: Optional[float] = None
+    lower_bound: float | None = None
+    upper_bound: float | None = None
     model_name: str
     model_version: str = "v1.0.0"
     created_at: str
@@ -202,7 +204,7 @@ class SavedScenarioResponse(BaseModel):
 
 class PropertyProfileCreate(BaseModel):
     name: str
-    description: Optional[str] = None
+    description: str | None = None
     features: PropertyFeatures
     estimated_price: float
     lower_bound: float
@@ -214,15 +216,15 @@ class PropertyProfileCreate(BaseModel):
 class PropertyProfileResponse(BaseModel):
     id: int
     name: str
-    description: Optional[str] = None
-    features: Dict[str, Any]
+    description: str | None = None
+    features: dict[str, Any]
     estimated_price: float
     lower_bound: float
     upper_bound: float
     model_name: str
     model_version: str
     created_at: str
-    updated_at: Optional[str] = None
+    updated_at: str | None = None
 
 
 class PropertyProfileComparisonItem(BaseModel):
@@ -238,10 +240,10 @@ class PropertyProfileComparisonItem(BaseModel):
     year_built: int
     neighborhood: str
     price_per_sqft: float
-    top_contributors: List[str] = Field(default_factory=list)
+    top_contributors: list[str] = Field(default_factory=list)
 
 
 class PropertyProfileComparisonResponse(BaseModel):
-    profiles: List[PropertyProfileComparisonItem]
+    profiles: list[PropertyProfileComparisonItem]
     count: int
 

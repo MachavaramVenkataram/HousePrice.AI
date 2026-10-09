@@ -1,7 +1,8 @@
 from fastapi import APIRouter, HTTPException
+
+from ....schemas.applicability import DatasetScopeInfo, ModelApplicabilityResponse
 from ....schemas.prediction import PropertyFeatures
-from ....schemas.applicability import ModelApplicabilityResponse, DatasetScopeInfo
-from ....services.model_applicability_service import ModelApplicabilityService, SUPPORTED_CATEGORIES
+from ....services.model_applicability_service import SUPPORTED_CATEGORIES, ModelApplicabilityService
 
 router = APIRouter()
 
@@ -13,7 +14,7 @@ def check_model_applicability(features: PropertyFeatures):
     try:
         return service.evaluate_applicability(features)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Applicability evaluation failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Applicability evaluation failed: {e!s}")
 
 
 @router.get("/scope", response_model=DatasetScopeInfo, summary="Get Dataset Geographic & Historical Scope")

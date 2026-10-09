@@ -1,7 +1,8 @@
-from typing import Optional
-from fastapi import APIRouter, Query, HTTPException
-from ....services.dataset_service import DatasetService
+
+from fastapi import APIRouter, Query
+
 from ....schemas.dataset import DatasetProfileResponse, PaginatedDatasetResponse
+from ....services.dataset_service import DatasetService
 
 router = APIRouter()
 
@@ -17,11 +18,11 @@ def get_dataset_profile():
 def query_dataset_rows(
     page: int = Query(default=1, ge=1),
     page_size: int = Query(default=15, ge=5, le=100),
-    search: Optional[str] = Query(default=None),
-    neighborhood: Optional[str] = Query(default=None),
-    min_price: Optional[float] = Query(default=None),
-    max_price: Optional[float] = Query(default=None),
-    min_bedrooms: Optional[int] = Query(default=None),
+    search: str | None = Query(default=None),
+    neighborhood: str | None = Query(default=None),
+    min_price: float | None = Query(default=None),
+    max_price: float | None = Query(default=None),
+    min_bedrooms: int | None = Query(default=None),
     sort_by: str = Query(default="SalePrice"),
     sort_desc: bool = Query(default=True),
 ):

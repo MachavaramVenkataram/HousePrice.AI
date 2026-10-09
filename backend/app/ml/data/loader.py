@@ -1,9 +1,10 @@
-import os
 import json
 import logging
-from typing import Dict, Any, Tuple
-import pandas as pd
+import os
+from typing import Any
+
 import numpy as np
+import pandas as pd
 import sklearn.datasets
 
 logger = logging.getLogger(__name__)
@@ -86,7 +87,7 @@ def load_dataset() -> pd.DataFrame:
     return pd.read_csv(RAW_DATA_PATH)
 
 
-def generate_data_profile(df: pd.DataFrame) -> Dict[str, Any]:
+def generate_data_profile(df: pd.DataFrame) -> dict[str, Any]:
     """Inspect dataset and document actual properties without fabrication."""
     numeric_cols = [c for c in NUMERIC_FEATURES if c in df.columns]
     categorical_cols = [c for c in CATEGORICAL_FEATURES if c in df.columns]
@@ -102,7 +103,7 @@ def generate_data_profile(df: pd.DataFrame) -> Dict[str, Any]:
 
     target_series = pd.to_numeric(df[TARGET], errors="coerce").dropna()
     target_stats = {
-        "count": int(len(target_series)),
+        "count": len(target_series),
         "mean": float(round(target_series.mean(), 2)),
         "std": float(round(target_series.std(), 2)),
         "min": float(round(target_series.min(), 2)),
@@ -128,7 +129,7 @@ def generate_data_profile(df: pd.DataFrame) -> Dict[str, Any]:
 
     profile = {
         "source": "OpenML Ames Housing Dataset (Dean De Cock, Truman State University)",
-        "rows": int(len(df)),
+        "rows": len(df),
         "total_columns": int(df.shape[1]),
         "target": TARGET,
         "numeric_features_count": len(numeric_cols),
@@ -149,7 +150,7 @@ def generate_data_profile(df: pd.DataFrame) -> Dict[str, Any]:
     return profile
 
 
-def get_data_profile() -> Dict[str, Any]:
+def get_data_profile() -> dict[str, Any]:
     """Retrieve data profile from disk, generating if missing."""
     if os.path.exists(DATA_PROFILE_PATH):
         with open(DATA_PROFILE_PATH, "r") as f:

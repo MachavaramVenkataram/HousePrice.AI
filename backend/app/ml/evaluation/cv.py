@@ -1,13 +1,14 @@
-import time
 import logging
-from typing import Dict, Any, List, Tuple
+import time
+from typing import Any
+
 import numpy as np
 import pandas as pd
+from sklearn.base import BaseEstimator, clone
 from sklearn.model_selection import KFold
-from sklearn.base import clone, BaseEstimator
 
-from .metrics import calculate_regression_metrics
 from ..preprocessing.pipeline import HousingPreprocessingPipeline, TargetTransformer
+from .metrics import calculate_regression_metrics
 
 logger = logging.getLogger(__name__)
 
@@ -19,7 +20,7 @@ def evaluate_model_cv(
     n_splits: int = 5,
     random_state: int = 42,
     use_target_transform: bool = True,
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     """Runs k-fold cross validation with strict zero-leakage preprocessing per fold."""
     kf = KFold(n_splits=n_splits, shuffle=True, random_state=random_state)
 

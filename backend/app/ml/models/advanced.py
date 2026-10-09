@@ -1,17 +1,16 @@
-from sklearn.ensemble import (
-    RandomForestRegressor,
-    GradientBoostingRegressor,
-    VotingRegressor,
-    StackingRegressor,
-)
-from sklearn.linear_model import Ridge
-import xgboost as xgb
-import lightgbm as lgb
+from typing import Any
+
 import catboost as cb
-from typing import Dict, Any
+import lightgbm as lgb
+import xgboost as xgb
+from sklearn.ensemble import (
+    GradientBoostingRegressor,
+    RandomForestRegressor,
+    VotingRegressor,
+)
 
 
-def get_advanced_models(random_state: int = 42) -> Dict[str, Any]:
+def get_advanced_models(random_state: int = 42) -> dict[str, Any]:
     """Returns advanced tree ensembles, gradient boosting, and validated ensembles."""
     rf = RandomForestRegressor(
         n_estimators=150,

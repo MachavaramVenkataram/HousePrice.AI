@@ -1,5 +1,6 @@
-from typing import Dict, Any, List, Optional, Union
-from pydantic import BaseModel, Field, ConfigDict
+from typing import Any
+
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class PropertyFeatures(BaseModel):
@@ -39,7 +40,7 @@ class PropertyFeatures(BaseModel):
 
     model_config = ConfigDict(populate_by_name=True)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         return {
             "GrLivArea": self.GrLivArea,
             "TotalBsmtSF": self.TotalBsmtSF,
@@ -83,30 +84,30 @@ class ModelInfo(BaseModel):
 
 class PredictionRequest(BaseModel):
     features: PropertyFeatures
-    model_override: Optional[str] = Field(default=None, description="Optional model selection: 'Voting Ensemble', 'Baseline', 'XGBoost', 'CatBoost', 'LightGBM'")
-    coverage_level: Optional[float] = Field(default=0.90, ge=0.50, le=0.99, description="Configured empirical coverage target (e.g. 0.90 or 0.95)")
+    model_override: str | None = Field(default=None, description="Optional model selection: 'Voting Ensemble', 'Baseline', 'XGBoost', 'CatBoost', 'LightGBM'")
+    coverage_level: float | None = Field(default=0.90, ge=0.50, le=0.99, description="Configured empirical coverage target (e.g. 0.90 or 0.95)")
 
 
 class UncertaintyInfo(BaseModel):
     method: str = Field(default="conformal_prediction", description="Statistical uncertainty quantification method")
     interval_width: float = Field(description="Prediction interval width: upper - lower")
-    uncertainty_level: Optional[str] = Field(default="Moderate", description="'Lower', 'Moderate', or 'Higher' uncertainty")
-    target_coverage: Optional[float] = Field(default=0.90, description="Configured empirical coverage target")
-    observed_coverage: Optional[float] = Field(default=None, description="Observed empirical coverage on held-out evaluation set")
-    mean_interval_width: Optional[float] = Field(default=None, description="Mean interval width on evaluation set")
-    calibration_dataset: Optional[str] = Field(default="Ames Housing Calibration Split (Holdout)", description="Dataset used for conformal calibration")
-    calibration_samples: Optional[int] = Field(default=292, description="Number of holdout calibration samples")
+    uncertainty_level: str | None = Field(default="Moderate", description="'Lower', 'Moderate', or 'Higher' uncertainty")
+    target_coverage: float | None = Field(default=0.90, description="Configured empirical coverage target")
+    observed_coverage: float | None = Field(default=None, description="Observed empirical coverage on held-out evaluation set")
+    mean_interval_width: float | None = Field(default=None, description="Mean interval width on evaluation set")
+    calibration_dataset: str | None = Field(default="Ames Housing Calibration Split (Holdout)", description="Dataset used for conformal calibration")
+    calibration_samples: int | None = Field(default=292, description="Number of holdout calibration samples")
 
 
 class PredictionInterval(BaseModel):
     lower: float = Field(description="Lower bound of conformal prediction interval")
     upper: float = Field(description="Upper bound of conformal prediction interval")
     coverage: float = Field(default=0.90, description="Empirical conformal coverage target")
-    lower_bound: Optional[float] = Field(default=None, description="Lower bound (backwards compatible)")
-    upper_bound: Optional[float] = Field(default=None, description="Upper bound (backwards compatible)")
-    margin: Optional[float] = Field(default=None, description="Half-width conformal quantile margin")
-    interval_width: Optional[float] = Field(default=None, description="upper - lower")
-    confidence_level: Optional[float] = Field(default=0.90, description="Empirical coverage target (backwards compatible)")
+    lower_bound: float | None = Field(default=None, description="Lower bound (backwards compatible)")
+    upper_bound: float | None = Field(default=None, description="Upper bound (backwards compatible)")
+    margin: float | None = Field(default=None, description="Half-width conformal quantile margin")
+    interval_width: float | None = Field(default=None, description="upper - lower")
+    confidence_level: float | None = Field(default=0.90, description="Empirical coverage target (backwards compatible)")
     coverage_guarantee: str = Field(default="90% Empirical Conformal Coverage")
     method: str = Field(default="Split Conformal Prediction")
     uncertainty_level: str = Field(default="Moderate", description="'Lower', 'Moderate', or 'Higher' uncertainty")
@@ -114,9 +115,9 @@ class PredictionInterval(BaseModel):
         default="This interval represents uncertainty around this individual model prediction. It indicates a range in which future observations are expected to fall with the configured empirical coverage under the calibration procedure. It is not a guaranteed market price."
     )
     calibration_samples: int = Field(default=292, description="Number of holdout calibration samples")
-    target_coverage: Optional[float] = Field(default=0.90)
-    observed_coverage: Optional[float] = Field(default=None)
-    mean_interval_width: Optional[float] = Field(default=None)
+    target_coverage: float | None = Field(default=0.90)
+    observed_coverage: float | None = Field(default=None)
+    mean_interval_width: float | None = Field(default=None)
 
 
 class FeatureContribution(BaseModel):
@@ -126,12 +127,12 @@ class FeatureContribution(BaseModel):
     direction: str  # "positive" | "negative"
     label: str  # "Increased model estimate" | "Reduced model estimate"
     contribution_tier: str = Field(default="Moderate contribution", description="e.g. Strong positive contribution, Negative contribution")
-    raw_value: Optional[Any] = None
+    raw_value: Any | None = None
 
 
 class ExplanationSummary(BaseModel):
     method: str = Field(default="SHAP", description="Explainability method (SHAP or Linear Coefficients)")
-    features: List[FeatureContribution] = Field(default_factory=list)
+    features: list[FeatureContribution] = Field(default_factory=list)
     interpretation_notice: str = Field(
         default="Feature contributions describe how the model arrived at this prediction; they do not establish causal relationships."
     )
@@ -140,14 +141,14 @@ class ExplanationSummary(BaseModel):
 class PredictionResponse(BaseModel):
     prediction: float = Field(description="Estimated property value from trained ML model")
     predicted_price: float = Field(description="Estimated property value (backwards compatible)")
-    model: Union[ModelInfo, str] = Field(description="Name or metadata of active trained regression model")
+    model: ModelInfo | str = Field(description="Name or metadata of active trained regression model")
     model_version: str = Field(default="v1.0.0")
-    prediction_interval: Optional[PredictionInterval] = Field(default=None, description="Conformal prediction interval, or None if unavailable")
-    uncertainty: Optional[UncertaintyInfo] = Field(default=None, description="Uncertainty quantification details")
+    prediction_interval: PredictionInterval | None = Field(default=None, description="Conformal prediction interval, or None if unavailable")
+    uncertainty: UncertaintyInfo | None = Field(default=None, description="Uncertainty quantification details")
     explanation: ExplanationSummary = Field(default_factory=ExplanationSummary)
-    explanations: List[FeatureContribution] = Field(default_factory=list, description="List of top feature attributions")
-    applicability: Optional[Dict[str, Any]] = Field(default=None, description="Model applicability and domain validation assessment")
-    metadata: Dict[str, Any]
+    explanations: list[FeatureContribution] = Field(default_factory=list, description="List of top feature attributions")
+    applicability: dict[str, Any] | None = Field(default=None, description="Model applicability and domain validation assessment")
+    metadata: dict[str, Any]
     disclaimer: str = Field(
         default="This is a machine-learning estimate based on historical housing data, not an official property appraisal or guaranteed market valuation."
     )
@@ -157,7 +158,7 @@ class PredictionResponse(BaseModel):
 class WhatIfRequest(BaseModel):
     base_features: PropertyFeatures
     modified_features: PropertyFeatures
-    model_override: Optional[str] = None
+    model_override: str | None = None
 
 
 class WhatIfResponse(BaseModel):
@@ -165,10 +166,10 @@ class WhatIfResponse(BaseModel):
     new_price: float
     difference: float
     percentage_change: float
-    model: Union[ModelInfo, str]
-    original_interval: Optional[PredictionInterval] = None
-    new_interval: Optional[PredictionInterval] = None
-    top_diverging_factors: List[Dict[str, Any]]
+    model: ModelInfo | str
+    original_interval: PredictionInterval | None = None
+    new_interval: PredictionInterval | None = None
+    top_diverging_factors: list[dict[str, Any]]
     statement: str = "Model estimate changes by..."
     disclaimer: str = "Model simulation based on historical data. Does not represent a guaranteed change in future market value."
 
@@ -176,19 +177,19 @@ class WhatIfResponse(BaseModel):
 class SensitivityRequest(BaseModel):
     base_features: PropertyFeatures
     target_feature: str = Field(default="GrLivArea")
-    min_value: Optional[float] = None
-    max_value: Optional[float] = None
+    min_value: float | None = None
+    max_value: float | None = None
     steps: int = Field(default=15, ge=5, le=50)
 
 
 class SensitivityResponse(BaseModel):
     target_feature: str
-    points: List[Dict[str, float]]  # [{"feature_value": 1500, "predicted_price": 240000}]
+    points: list[dict[str, float]]  # [{"feature_value": 1500, "predicted_price": 240000}]
     model: str
 
 
 class FeedbackRequest(BaseModel):
     prediction_id: int
     feedback: str = Field(..., pattern="^(accurate|inaccurate)$")
-    comment: Optional[str] = None
+    comment: str | None = None
 

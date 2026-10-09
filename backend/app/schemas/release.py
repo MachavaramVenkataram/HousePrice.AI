@@ -1,4 +1,5 @@
-from typing import Dict, Any, List, Optional, Literal
+from typing import Any, Literal
+
 from pydantic import BaseModel, Field
 
 
@@ -15,10 +16,10 @@ class ModelCandidateSummary(BaseModel):
     name: str
     version: str
     stage: str  # "Production", "Validation", "Archived", "Rejected"
-    cv_metrics: Dict[str, Any]
-    test_metrics: Dict[str, Any]
+    cv_metrics: dict[str, Any]
+    test_metrics: dict[str, Any]
     artifact_path: str
-    parameters: Dict[str, Any] = Field(default_factory=dict)
+    parameters: dict[str, Any] = Field(default_factory=dict)
     description: str = ""
     registered_at: str
     is_production: bool = False
@@ -30,11 +31,11 @@ class ModelValidationResult(BaseModel):
     candidate_version: str
     is_promotable: bool
     summary: str
-    criteria: List[ReleaseValidationCriterion]
+    criteria: list[ReleaseValidationCriterion]
     latency_ms: float
     preprocessing_compatible: bool
-    interval_coverage: Optional[float] = None
-    mean_interval_width: Optional[float] = None
+    interval_coverage: float | None = None
+    mean_interval_width: float | None = None
     evaluated_at: str
 
 
@@ -43,8 +44,8 @@ class ModelComparisonMetricRow(BaseModel):
     label: str
     current_value: Any
     candidate_value: Any
-    difference: Optional[float] = None
-    improvement: Optional[bool] = None
+    difference: float | None = None
+    improvement: bool | None = None
     unit: str = ""
 
 
@@ -53,7 +54,7 @@ class ModelComparisonResult(BaseModel):
     current_version: str
     candidate_model: str
     candidate_version: str
-    comparison_rows: List[ModelComparisonMetricRow]
+    comparison_rows: list[ModelComparisonMetricRow]
     overall_recommendation: str
     better_model: str
 
@@ -61,17 +62,17 @@ class ModelComparisonResult(BaseModel):
 class PromotionRequest(BaseModel):
     candidate_name: str
     approver: str = Field(default="Authorized Lead Data Scientist", min_length=2)
-    notes: Optional[str] = Field(default="Model verified against validation criteria and approved for production release.")
+    notes: str | None = Field(default="Model verified against validation criteria and approved for production release.")
 
 
 class CancelCandidateRequest(BaseModel):
     candidate_name: str
-    reason: Optional[str] = Field(default="Validation thresholds or qualitative criteria not met.")
+    reason: str | None = Field(default="Validation thresholds or qualitative criteria not met.")
 
 
 class RollbackRequest(BaseModel):
     approver: str = Field(default="Authorized Lead Data Scientist", min_length=2)
-    notes: Optional[str] = Field(default="Emergency or planned rollback to previously verified production model.")
+    notes: str | None = Field(default="Emergency or planned rollback to previously verified production model.")
 
 
 class ModelReleaseHistoryItem(BaseModel):
@@ -80,20 +81,20 @@ class ModelReleaseHistoryItem(BaseModel):
     model_name: str
     model_version: str
     action: str
-    previous_model: Optional[str] = None
-    previous_version: Optional[str] = None
+    previous_model: str | None = None
+    previous_version: str | None = None
     approver: str
-    notes: Optional[str] = None
-    validation_metrics: Dict[str, Any] = Field(default_factory=dict)
+    notes: str | None = None
+    validation_metrics: dict[str, Any] = Field(default_factory=dict)
 
 
 class ModelReleaseStatusResponse(BaseModel):
     current_production_model: ModelCandidateSummary
-    candidates: List[ModelCandidateSummary]
-    baseline_model: Optional[ModelCandidateSummary] = None
+    candidates: list[ModelCandidateSummary]
+    baseline_model: ModelCandidateSummary | None = None
     dataset_version: str = "Ames Housing v1.0 (1,460 rows, 81 attributes)"
-    training_run_id: Optional[str] = None
-    promotion_criteria: List[str]
+    training_run_id: str | None = None
+    promotion_criteria: list[str]
     can_rollback: bool
-    rollback_target: Optional[str] = None
-    recent_releases: List[ModelReleaseHistoryItem]
+    rollback_target: str | None = None
+    recent_releases: list[ModelReleaseHistoryItem]

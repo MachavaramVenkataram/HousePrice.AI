@@ -1,4 +1,5 @@
-from typing import Dict, Any, List, Optional
+from typing import Any
+
 from pydantic import BaseModel
 
 
@@ -23,8 +24,8 @@ class RegisteredModelItem(BaseModel):
     name: str
     version: str
     stage: str
-    cv_metrics: Dict[str, Any]
-    test_metrics: Dict[str, Any]
+    cv_metrics: dict[str, Any]
+    test_metrics: dict[str, Any]
     registered_at: str
     description: str
 
@@ -33,7 +34,7 @@ class ModelRegistryResponse(BaseModel):
     current_production_model: str
     production_version: str
     baseline_model: str
-    registered_models: List[RegisteredModelItem]
+    registered_models: list[RegisteredModelItem]
     last_updated: str
 
 
@@ -58,4 +59,4 @@ class ErrorExplorerRecord(BaseModel):
     residual: float
     absolute_error: float
     relative_error_pct: float
-    key_features: Dict[str, Any]
+    key_features: dict[str, Any]

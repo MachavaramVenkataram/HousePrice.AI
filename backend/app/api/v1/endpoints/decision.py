@@ -1,28 +1,27 @@
 import json
-from typing import Dict, Any, List, Optional
-from pydantic import BaseModel
+from typing import Any
+
 from fastapi import APIRouter, Depends, HTTPException, Query
+from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
 from ....core.database import get_db
 from ....db.models import SavedScenario
-from ....schemas.prediction import PropertyFeatures
 from ....schemas.decision import (
-    PropertyProfile,
-    InputQualityAssessment,
-    EstimateReliabilityAssessment,
-    ComparableInsights,
-    AffordabilityRequest,
     AffordabilityCalculation,
+    AffordabilityRequest,
+    ComparableInsights,
+    EstimateReliabilityAssessment,
     ImprovementSimulationResponse,
     SavedScenarioCreate,
-    SavedScenarioUpdate,
     SavedScenarioResponse,
+    SavedScenarioUpdate,
 )
-from ....services.similarity_service import SimilarityService
-from ....services.reliability_service import ReliabilityService
+from ....schemas.prediction import PropertyFeatures
 from ....services.affordability_service import AffordabilityService
+from ....services.reliability_service import ReliabilityService
 from ....services.scenario_service import ScenarioService
+from ....services.similarity_service import SimilarityService
 
 router = APIRouter()
 
@@ -33,17 +32,17 @@ class ProfileRequest(PropertyFeatures):
 
 class SimilarRequest(PropertyFeatures):
     estimated_price: float
-    priority: Optional[str] = "balanced"
-    top_k: Optional[int] = 5
+    priority: str | None = "balanced"
+    top_k: int | None = 5
 
 
 class ReliabilityRequest(PropertyFeatures):
-    interval_width: Optional[float] = None
-    estimated_price: Optional[float] = None
+    interval_width: float | None = None
+    estimated_price: float | None = None
 
 
 class ImproveRequest(PropertyFeatures):
-    renovation_costs: Optional[Dict[str, float]] = None
+    renovation_costs: dict[str, float] | None = None
 
 
 @router.post("/profile", summary="Smart Property Profile & Quality Check")
@@ -77,14 +76,14 @@ def get_similar_properties(
             match_scope=match_scope,
         )
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Comparable search failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Comparable search failed: {e!s}")
 
 
 @router.post("/reliability", response_model=EstimateReliabilityAssessment, summary="Estimate Reliability Center")
 def get_estimate_reliability(
     features: PropertyFeatures,
-    interval_width: Optional[float] = Query(default=None),
-    estimated_price: Optional[float] = Query(default=None),
+    interval_width: float | None = Query(default=None),
+    estimated_price: float | None = Query(default=None),
 ):
     """Evaluates multi-model consensus, interval width, input distribution, and calibration availability."""
     service = ReliabilityService.get_instance()
@@ -95,7 +94,7 @@ def get_estimate_reliability(
             estimated_price=estimated_price,
         )
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Reliability evaluation failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Reliability evaluation failed: {e!s}")
 
 
 @router.post("/affordability", response_model=AffordabilityCalculation, summary="Affordability & Budget Planner")
@@ -105,27 +104,27 @@ def calculate_affordability(request: AffordabilityRequest):
     try:
         return service.calculate(request)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Affordability calculation failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Affordability calculation failed: {e!s}")
 
 
-@router.post("/affordability/compare", response_model=List[AffordabilityCalculation], summary="Compare Budget Scenarios")
-def compare_budget_scenarios(scenarios: List[AffordabilityRequest]):
+@router.post("/affordability/compare", response_model=list[AffordabilityCalculation], summary="Compare Budget Scenarios")
+def compare_budget_scenarios(scenarios: list[AffordabilityRequest]):
     """Evaluates multiple budget configurations side-by-side (e.g. Budget A, B, C)."""
     service = AffordabilityService.get_instance()
     try:
         return service.calculate_multi(scenarios)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Budget comparison failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Budget comparison failed: {e!s}")
 
 
 class ImprovementPayload(BaseModel):
-    features: Optional[PropertyFeatures] = None
-    renovation_costs: Optional[Dict[str, float]] = None
+    features: PropertyFeatures | None = None
+    renovation_costs: dict[str, float] | None = None
 
 
 @router.post("/improve", response_model=ImprovementSimulationResponse, summary="Property Improvement Simulator")
 def simulate_improvements(
-    payload: Dict[str, Any],
+    payload: dict[str, Any],
 ):
     """Simulates property improvements through trained models and computes modeled difference."""
     service = ScenarioService.get_instance()
@@ -142,7 +141,7 @@ def simulate_improvements(
             renovation_costs=costs,
         )
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Improvement simulation failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Improvement simulation failed: {e!s}")
 
 
 @router.post("/scenarios", response_model=SavedScenarioResponse, summary="Save User Scenario")
@@ -151,7 +150,7 @@ def save_scenario(
     db: Session = Depends(get_db),
 ):
     """Persists a property scenario to the database for cross-scenario comparison."""
-    from ....core.database import engine, Base
+    from ....core.database import Base, engine
     Base.metadata.create_all(bind=engine)
     rec = SavedScenario(
         name=request.name,
@@ -169,7 +168,7 @@ def save_scenario(
     return SavedScenarioResponse(**rec.to_dict())
 
 
-@router.get("/scenarios", response_model=List[SavedScenarioResponse], summary="List Saved Scenarios")
+@router.get("/scenarios", response_model=list[SavedScenarioResponse], summary="List Saved Scenarios")
 def list_saved_scenarios(
     db: Session = Depends(get_db),
 ):
@@ -251,9 +250,9 @@ def delete_saved_scenario(
 # --- Property Profiles Endpoints ---
 
 from ....schemas.decision import (
+    PropertyProfileComparisonResponse,
     PropertyProfileCreate,
     PropertyProfileResponse,
-    PropertyProfileComparisonResponse,
 )
 from ....services.profile_service import ProfileService
 
@@ -264,19 +263,19 @@ def create_property_profile(
     db: Session = Depends(get_db),
 ):
     """Creates a persistent property profile (e.g. 'My Current Home', 'Property A')."""
-    from ....core.database import engine, Base
+    from ....core.database import Base, engine
     Base.metadata.create_all(bind=engine)
     service = ProfileService.get_instance()
     return service.create_profile(request, db)
 
 
-@router.get("/profiles", response_model=List[PropertyProfileResponse], summary="List Property Profiles")
+@router.get("/profiles", response_model=list[PropertyProfileResponse], summary="List Property Profiles")
 def list_property_profiles(
     limit: int = Query(default=20, ge=1, le=50),
     db: Session = Depends(get_db),
 ):
     """Lists saved property profiles."""
-    from ....core.database import engine, Base
+    from ....core.database import Base, engine
     Base.metadata.create_all(bind=engine)
     service = ProfileService.get_instance()
     return service.list_profiles(db, limit=limit)
@@ -297,7 +296,7 @@ def delete_property_profile(
 
 @router.post("/profiles/compare", response_model=PropertyProfileComparisonResponse, summary="Compare Property Profiles")
 def compare_property_profiles(
-    profile_ids: List[int],
+    profile_ids: list[int],
     db: Session = Depends(get_db),
 ):
     """Compares saved property profiles side-by-side."""

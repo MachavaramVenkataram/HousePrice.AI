@@ -1,35 +1,36 @@
-import os
-import time
 import json
 import logging
+import os
+import time
+from typing import Any
+
 import joblib
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from typing import Dict, Any
 
 from .data.loader import (
-    load_dataset,
-    generate_data_profile,
-    NUMERIC_FEATURES,
     CATEGORICAL_FEATURES,
+    NUMERIC_FEATURES,
     TARGET,
-)
-from .preprocessing.pipeline import HousingPreprocessingPipeline, TargetTransformer
-from .models.baselines import get_baseline_models
-from .models.advanced import get_advanced_models
-from .models.conformal import ConformalPredictor, MultiModelConformalManager
-from .models.registry import ModelRegistryManager
-from .evaluation.metrics import (
-    calculate_regression_metrics,
-    analyze_residuals,
-    build_error_explorer,
+    generate_data_profile,
+    load_dataset,
 )
 from .evaluation.cv import evaluate_model_cv
-from .optimization.optuna_tuner import tune_xgboost_optuna
+from .evaluation.metrics import (
+    analyze_residuals,
+    build_error_explorer,
+    calculate_regression_metrics,
+)
 from .explainability.shap_explainer import ModelExplainer
-from .tracking.mlflow_tracker import log_experiment_run
+from .models.advanced import get_advanced_models
+from .models.baselines import get_baseline_models
+from .models.conformal import ConformalPredictor, MultiModelConformalManager
+from .models.registry import ModelRegistryManager
 from .monitoring.drift_detector import DataDriftDetector
+from .optimization.optuna_tuner import tune_xgboost_optuna
+from .preprocessing.pipeline import HousingPreprocessingPipeline, TargetTransformer
+from .tracking.mlflow_tracker import log_experiment_run
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("HOUSEPRICE_TRAINING")
@@ -37,7 +38,7 @@ logger = logging.getLogger("HOUSEPRICE_TRAINING")
 ARTIFACTS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "artifacts"))
 
 
-def run_complete_ml_pipeline(run_optuna: bool = True, optuna_trials: int = 12) -> Dict[str, Any]:
+def run_complete_ml_pipeline(run_optuna: bool = True, optuna_trials: int = 12) -> dict[str, Any]:
     """Orchestrates end-to-end reproducible ML training, validation, benchmarking, and artifact generation."""
     os.makedirs(ARTIFACTS_DIR, exist_ok=True)
     start_time = time.time()
@@ -48,7 +49,7 @@ def run_complete_ml_pipeline(run_optuna: bool = True, optuna_trials: int = 12) -
     # 1. Ingestion & Profiling
     logger.info("Phase 1: Loading and profiling dataset...")
     df = load_dataset()
-    data_profile = generate_data_profile(df)
+    _ = generate_data_profile(df)
     logger.info(f"Dataset loaded: {len(df)} rows, target: {TARGET}")
 
     # Drop rows without target value

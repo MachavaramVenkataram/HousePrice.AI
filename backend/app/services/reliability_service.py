@@ -1,15 +1,15 @@
+
 import numpy as np
-import pandas as pd
-from typing import Dict, Any, List, Optional
-from ..schemas.prediction import PropertyFeatures
+
 from ..schemas.decision import (
-    PropertyProfile,
-    InputQualityAssessment,
-    ModelPredictionSummary,
-    ModelConsensus,
-    ReliabilityDimension,
     EstimateReliabilityAssessment,
+    InputQualityAssessment,
+    ModelConsensus,
+    ModelPredictionSummary,
+    PropertyProfile,
+    ReliabilityDimension,
 )
+from ..schemas.prediction import PropertyFeatures
 from .prediction_service import PredictionService
 
 
@@ -167,7 +167,7 @@ class ReliabilityService:
             for name in ["XGBoost", "LightGBM", "CatBoost"]:
                 models_to_test.append((name, name.lower()))
 
-        predictions: List[ModelPredictionSummary] = []
+        predictions: list[ModelPredictionSummary] = []
         for label, override in models_to_test:
             try:
                 res = self.prediction_service.predict(features, model_override=override)
@@ -183,7 +183,7 @@ class ReliabilityService:
                         upper_bound=round(upper, 2) if upper else None,
                     )
                 )
-            except Exception as e:
+            except Exception:
                 continue
 
         if not predictions:
@@ -230,8 +230,8 @@ class ReliabilityService:
     def evaluate_estimate_reliability(
         self,
         features: PropertyFeatures,
-        interval_width: Optional[float] = None,
-        estimated_price: Optional[float] = None,
+        interval_width: float | None = None,
+        estimated_price: float | None = None,
     ) -> EstimateReliabilityAssessment:
         """Synthesizes transparent evidence dimensions into an Estimate Reliability Center."""
         input_quality = self.assess_input_quality(features)

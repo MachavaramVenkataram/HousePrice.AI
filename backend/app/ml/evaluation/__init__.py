@@ -1,9 +1,9 @@
-from .metrics import calculate_regression_metrics, analyze_residuals, build_error_explorer
 from .cv import evaluate_model_cv
+from .metrics import analyze_residuals, build_error_explorer, calculate_regression_metrics
 
 __all__ = [
-    "calculate_regression_metrics",
     "analyze_residuals",
     "build_error_explorer",
+    "calculate_regression_metrics",
     "evaluate_model_cv",
 ]

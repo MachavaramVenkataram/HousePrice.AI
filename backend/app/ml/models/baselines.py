@@ -1,8 +1,9 @@
-from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
-from typing import Dict, Any
+from typing import Any
+
+from sklearn.linear_model import ElasticNet, Lasso, LinearRegression, Ridge
 
 
-def get_baseline_models(random_state: int = 42) -> Dict[str, Any]:
+def get_baseline_models(random_state: int = 42) -> dict[str, Any]:
     """Returns baseline linear regression and regularized models."""
     return {
         "Linear Regression": LinearRegression(),

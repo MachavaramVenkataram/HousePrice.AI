@@ -1,7 +1,8 @@
-from typing import Optional
+
 from fastapi import APIRouter, HTTPException, Response
 from pydantic import BaseModel
-from ....schemas.prediction import PropertyFeatures, PredictionResponse
+
+from ....schemas.prediction import PredictionResponse, PropertyFeatures
 from ....services.prediction_service import PredictionService
 from ....services.report_service import generate_property_valuation_pdf
 
@@ -10,7 +11,7 @@ router = APIRouter()
 
 class GenerateReportRequest(BaseModel):
     features: PropertyFeatures
-    prediction: Optional[PredictionResponse] = None
+    prediction: PredictionResponse | None = None
 
 
 @router.post("/pdf", summary="Generate Valuation PDF Report")
@@ -33,4 +34,4 @@ def generate_pdf_report(request: GenerateReportRequest):
             },
         )
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Failed to compile PDF: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to compile PDF: {e!s}")

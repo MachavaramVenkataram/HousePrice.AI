@@ -1,8 +1,13 @@
-import pandas as pd
+
 import numpy as np
-from typing import Dict, Any, List, Optional
-from ..ml.data.loader import load_dataset, get_data_profile, NUMERIC_FEATURES, CATEGORICAL_FEATURES, TARGET
-from ..schemas.dataset import DatasetProfileResponse, PaginatedDatasetResponse, LocationSummary
+import pandas as pd
+
+from ..ml.data.loader import (
+    TARGET,
+    get_data_profile,
+    load_dataset,
+)
+from ..schemas.dataset import DatasetProfileResponse, LocationSummary, PaginatedDatasetResponse
 
 
 class DatasetService:
@@ -25,11 +30,11 @@ class DatasetService:
         self,
         page: int = 1,
         page_size: int = 15,
-        search: Optional[str] = None,
-        neighborhood: Optional[str] = None,
-        min_price: Optional[float] = None,
-        max_price: Optional[float] = None,
-        min_bedrooms: Optional[int] = None,
+        search: str | None = None,
+        neighborhood: str | None = None,
+        min_price: float | None = None,
+        max_price: float | None = None,
+        min_bedrooms: int | None = None,
         sort_by: str = "SalePrice",
         sort_desc: bool = True,
     ) -> PaginatedDatasetResponse:
@@ -97,7 +102,7 @@ class DatasetService:
             rows=records,
         )
 
-    def get_location_analytics(self) -> List[LocationSummary]:
+    def get_location_analytics(self) -> list[LocationSummary]:
         if "Neighborhood" not in self.df.columns or TARGET not in self.df.columns:
             return []
 

@@ -1,6 +1,7 @@
-import os
 import logging
-from typing import Dict, Any, Optional
+import os
+from typing import Any
+
 try:
     import mlflow
     HAS_MLFLOW = True
@@ -26,10 +27,10 @@ def init_mlflow(experiment_name: str = "houseprice_ai_benchmark"):
 
 def log_experiment_run(
     model_name: str,
-    params: Dict[str, Any],
-    metrics: Dict[str, Any],
-    tags: Optional[Dict[str, str]] = None,
-) -> Optional[str]:
+    params: dict[str, Any],
+    metrics: dict[str, Any],
+    tags: dict[str, str] | None = None,
+) -> str | None:
     """Logs parameters, cross-validation metrics, and metadata to MLflow."""
     if not HAS_MLFLOW or mlflow is None:
         return None

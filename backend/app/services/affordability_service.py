@@ -1,5 +1,4 @@
-from typing import Dict, Any
-from ..schemas.decision import AffordabilityRequest, AffordabilityCalculation
+from ..schemas.decision import AffordabilityCalculation, AffordabilityRequest
 
 
 class AffordabilityService:

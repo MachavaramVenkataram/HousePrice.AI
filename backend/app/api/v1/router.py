@@ -1,5 +1,16 @@
 from fastapi import APIRouter
-from .endpoints import predict, models, dataset, monitoring, reports, health, decision, applicability, target_price
+
+from .endpoints import (
+    applicability,
+    dataset,
+    decision,
+    health,
+    models,
+    monitoring,
+    predict,
+    reports,
+    target_price,
+)
 
 api_router = APIRouter()
 

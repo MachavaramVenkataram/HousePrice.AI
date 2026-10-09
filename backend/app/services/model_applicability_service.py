@@ -1,15 +1,13 @@
-import os
 import json
 import logging
-import numpy as np
-from typing import Dict, Any, List, Optional
+import os
 
-from ..schemas.prediction import PropertyFeatures
 from ..schemas.applicability import (
-    ModelApplicabilityResponse,
     ApplicabilityCheck,
     DatasetScopeInfo,
+    ModelApplicabilityResponse,
 )
+from ..schemas.prediction import PropertyFeatures
 from .prediction_service import PredictionService
 
 logger = logging.getLogger(__name__)
@@ -22,7 +20,7 @@ DATA_PROFILE_PATH = os.path.abspath(
 )
 
 # Supported categorical dictionaries strictly verified from Ames Housing dataset
-SUPPORTED_CATEGORIES: Dict[str, List[str]] = {
+SUPPORTED_CATEGORIES: dict[str, list[str]] = {
     "Neighborhood": [
         "Blmngtn", "Blueste", "BrDale", "BrkSide", "ClearCr", "CollgCr", "Crawfor",
         "Edwards", "Gilbert", "IDOTRR", "MeadowV", "Mitchel", "NAmes", "NPkVill",
@@ -58,7 +56,7 @@ class ModelApplicabilityService:
 
     def __init__(self):
         self.prediction_service = PredictionService.get_instance()
-        self.baseline_stats: Dict[str, Dict[str, float]] = {}
+        self.baseline_stats: dict[str, dict[str, float]] = {}
         self._load_baseline_stats()
 
     @classmethod
@@ -79,8 +77,8 @@ class ModelApplicabilityService:
 
     def evaluate_applicability(self, features: PropertyFeatures) -> ModelApplicabilityResponse:
         raw_dict = features.to_dict()
-        checks: List[ApplicabilityCheck] = []
-        limitations: List[str] = []
+        checks: list[ApplicabilityCheck] = []
+        limitations: list[str] = []
         unsupported_count = 0
         warning_count = 0
 
@@ -275,6 +273,7 @@ class ModelApplicabilityService:
                 details={
                     "anomalous_features_count": drift_check.get("warnings_count", 0),
                     "anomalous_features": drift_check.get("anomalous_features", []),
+                    "drift_messages": drift_messages,
                     "reliability_notice": drift_check.get("reliability_notice")
                 }
             ))

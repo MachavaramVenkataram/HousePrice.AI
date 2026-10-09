@@ -1,8 +1,10 @@
 import os
+
 os.environ["DISABLE_SQLALCHEMY_CEXT"] = "1"
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
+
 from .config import settings
 
 # SQLite needs check_same_thread=False for multithreading

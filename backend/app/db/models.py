@@ -1,6 +1,8 @@
 import json
-from datetime import datetime, timezone
-from sqlalchemy import Column, Integer, String, Float, DateTime, Text
+from datetime import UTC, datetime
+
+from sqlalchemy import Column, DateTime, Float, Integer, String, Text
+
 from ..core.database import Base
 
 
@@ -8,7 +10,7 @@ class PredictionRecord(Base):
     __tablename__ = "predictions"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    timestamp = Column(DateTime, default=lambda: datetime.now(timezone.utc), index=True)
+    timestamp = Column(DateTime, default=lambda: datetime.now(UTC), index=True)
     model_name = Column(String(64), nullable=False, default="Voting Ensemble")
     model_version = Column(String(32), nullable=False, default="v1.0.0")
     inputs_json = Column(Text, nullable=False)
@@ -43,7 +45,7 @@ class SavedScenario(Base):
     __tablename__ = "saved_scenarios"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), index=True)
+    created_at = Column(DateTime, default=lambda: datetime.now(UTC), index=True)
     name = Column(String(128), nullable=False)
     description = Column(Text, nullable=True)
     features_json = Column(Text, nullable=False)
@@ -76,8 +78,8 @@ class PropertyProfileRecord(Base):
     __tablename__ = "property_profiles"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), index=True)
-    updated_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))
+    created_at = Column(DateTime, default=lambda: datetime.now(UTC), index=True)
+    updated_at = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=lambda: datetime.now(UTC))
     name = Column(String(128), nullable=False)
     description = Column(Text, nullable=True)
     features_json = Column(Text, nullable=False)
@@ -112,7 +114,7 @@ class ModelReleaseRecord(Base):
     __tablename__ = "model_releases"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    timestamp = Column(DateTime, default=lambda: datetime.now(timezone.utc), index=True)
+    timestamp = Column(DateTime, default=lambda: datetime.now(UTC), index=True)
     model_name = Column(String(64), nullable=False)
     model_version = Column(String(32), nullable=False)
     action = Column(String(32), nullable=False)  # 'promoted', 'rollback', 'candidate_registered', 'candidate_rejected'

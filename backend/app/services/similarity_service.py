@@ -1,8 +1,9 @@
+from typing import Any
+
 import numpy as np
-import pandas as pd
-from typing import Dict, Any, List, Optional
+
+from ..schemas.decision import ComparableInsights, SimilarPropertyComparable
 from .dataset_service import DatasetService
-from ..schemas.decision import SimilarPropertyComparable, ComparableInsights
 
 
 class SimilarityService:
@@ -43,7 +44,7 @@ class SimilarityService:
 
     def find_similar_properties(
         self,
-        features_dict: Dict[str, Any],
+        features_dict: dict[str, Any],
         estimated_price: float,
         priority: str = "balanced",
         top_k: int = 5,
@@ -175,7 +176,7 @@ class SimilarityService:
         # Pick top_k closest records
         sorted_df = df_target.sort_values(by="_distance", ascending=True).head(top_k)
 
-        comparables: List[SimilarPropertyComparable] = []
+        comparables: list[SimilarPropertyComparable] = []
         rank = 1
         for idx, row in sorted_df.iterrows():
             rec_id = int(row.get("Id", idx))

@@ -1,7 +1,6 @@
+
 import pandas as pd
-import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
-from typing import List, Dict, Any
 
 
 class FeatureEngineer(BaseEstimator, TransformerMixin):
@@ -22,7 +21,7 @@ class FeatureEngineer(BaseEstimator, TransformerMixin):
     """
 
     def __init__(self):
-        self.engineered_feature_names: List[str] = [
+        self.engineered_feature_names: list[str] = [
             "TotalSF",
             "TotalBath",
             "HouseAge",
@@ -80,7 +79,7 @@ class FeatureEngineer(BaseEstimator, TransformerMixin):
 
         return df
 
-    def get_feature_documentation(self) -> List[Dict[str, str]]:
+    def get_feature_documentation(self) -> list[dict[str, str]]:
         return [
             {"name": "TotalSF", "formula": "1stFlrSF + 2ndFlrSF + TotalBsmtSF", "rationale": "Captures overall enclosed interior and lower-level footprint."},
             {"name": "TotalBath", "formula": "FullBath + 0.5*HalfBath + BsmtFullBath + 0.5*BsmtHalfBath", "rationale": "Standard valuation metric for weighted sanitary fixture capacity."},

@@ -1,5 +1,6 @@
-from typing import Dict, Any, List, Optional
-from pydantic import BaseModel, Field
+from typing import Any
+
+from pydantic import BaseModel
 
 
 class DatasetProfileResponse(BaseModel):
@@ -9,14 +10,14 @@ class DatasetProfileResponse(BaseModel):
     target: str
     numeric_features_count: int
     categorical_features_count: int
-    numeric_features: List[str]
-    categorical_features: List[str]
-    target_distribution: Dict[str, Any]
-    missing_values: Dict[str, Any]
+    numeric_features: list[str]
+    categorical_features: list[str]
+    target_distribution: dict[str, Any]
+    missing_values: dict[str, Any]
     duplicates_count: int
     data_quality_score: float
     data_quality_methodology: str
-    unique_neighborhoods: List[str]
+    unique_neighborhoods: list[str]
 
 
 class PaginatedDatasetResponse(BaseModel):
@@ -25,9 +26,9 @@ class PaginatedDatasetResponse(BaseModel):
     page: int
     page_size: int
     total_pages: int
-    columns: List[str]
-    data: List[Dict[str, Any]]
-    rows: List[Dict[str, Any]]
+    columns: list[str]
+    data: list[dict[str, Any]]
+    rows: list[dict[str, Any]]
 
 
 class LocationSummary(BaseModel):

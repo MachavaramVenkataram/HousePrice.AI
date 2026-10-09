@@ -1,12 +1,13 @@
+import json
+import logging
 import os
 import sys
 import time
-import json
-import logging
+from typing import Any
+
 import joblib
 import numpy as np
 import pandas as pd
-from typing import Dict, Any, List, Optional
 from sqlalchemy.orm import Session
 
 # Ensure workspace root is in sys.path so pickled artifacts referencing 'backend.*' unpickle cleanly
@@ -16,22 +17,21 @@ ROOT_DIR = os.path.abspath(
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-from ..schemas.prediction import (
-    PropertyFeatures,
-    PredictionResponse,
-    PredictionInterval,
-    ModelInfo,
-    UncertaintyInfo,
-    FeatureContribution,
-    ExplanationSummary,
-    WhatIfResponse,
-    SensitivityResponse,
-)
 from ..db.models import PredictionRecord
-from ..ml.preprocessing.pipeline import TargetTransformer
+from ..ml.models.conformal import MultiModelConformalManager
 from ..ml.monitoring.drift_detector import DataDriftDetector
-from ..ml.models.conformal import MultiModelConformalManager, ConformalPredictor
-
+from ..ml.preprocessing.pipeline import TargetTransformer
+from ..schemas.prediction import (
+    ExplanationSummary,
+    FeatureContribution,
+    ModelInfo,
+    PredictionInterval,
+    PredictionResponse,
+    PropertyFeatures,
+    SensitivityResponse,
+    UncertaintyInfo,
+    WhatIfResponse,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -116,7 +116,7 @@ class PredictionService:
 
         logger.info("ML Artifacts initialization completed.")
 
-    def _explain_linear_model(self, X_trans: np.ndarray, raw_dict: Dict[str, Any], top_k: int = 8) -> List[FeatureContribution]:
+    def _explain_linear_model(self, X_trans: np.ndarray, raw_dict: dict[str, Any], top_k: int = 8) -> list[FeatureContribution]:
         """Calculates direct linear model contributions using trained coefficients."""
         if self.baseline_model is None or not hasattr(self.baseline_model, "coef_"):
             return []
@@ -154,10 +154,10 @@ class PredictionService:
     def _explain_tree_model(
         self,
         X_trans: np.ndarray,
-        raw_dict: Dict[str, Any],
+        raw_dict: dict[str, Any],
         target_model: Any = None,
         top_k: int = 8,
-    ) -> List[FeatureContribution]:
+    ) -> list[FeatureContribution]:
         """Calculates exact Tree SHAP values using native tree explainability (CatBoost, XGBoost, LightGBM)."""
         feature_names = getattr(self.preprocessor, "feature_names_out", None)
         if feature_names is None and self.explainer:
@@ -289,9 +289,9 @@ class PredictionService:
     def predict(
         self,
         features: PropertyFeatures,
-        model_override: Optional[str] = None,
+        model_override: str | None = None,
         coverage_level: float = 0.90,
-        db: Optional[Session] = None,
+        db: Session | None = None,
     ) -> PredictionResponse:
         t0 = time.perf_counter()
         raw_dict = features.to_dict()
@@ -302,7 +302,7 @@ class PredictionService:
             X_trans = self.preprocessor.transform(df_single)
         except Exception as e:
             logger.error(f"Feature preprocessing failed: {e}")
-            raise RuntimeError(f"Feature transformation error: {str(e)}")
+            raise RuntimeError(f"Feature transformation error: {e!s}")
 
         # Model selection
         active_model = self.best_model
@@ -337,8 +337,8 @@ class PredictionService:
             raise RuntimeError("Unable to generate a prediction.")
 
         # Conformal Prediction Interval (Split Conformal, multi-model & multi-coverage aware)
-        interval: Optional[PredictionInterval] = None
-        uncertainty_info: Optional[UncertaintyInfo] = None
+        interval: PredictionInterval | None = None
+        uncertainty_info: UncertaintyInfo | None = None
         uncertainty_level = "Moderate"
         interval_available = False
         interval_unavailable_reason = None
@@ -404,7 +404,7 @@ class PredictionService:
             interval_unavailable_reason = "Uncertainty calibration artifact unavailable."
 
         # Feature Attribution & Explainability
-        explanations: List[FeatureContribution] = []
+        explanations: list[FeatureContribution] = []
         explain_method = "Tree SHAP (Lundberg et al.)"
         if is_linear_baseline:
             explanations = self._explain_linear_model(X_trans, raw_dict, top_k=8)
@@ -505,7 +505,7 @@ class PredictionService:
         self,
         base_features: PropertyFeatures,
         modified_features: PropertyFeatures,
-        model_override: Optional[str] = None,
+        model_override: str | None = None,
     ) -> WhatIfResponse:
         base_resp = self.predict(base_features, model_override=model_override)
         mod_resp = self.predict(modified_features, model_override=model_override)
@@ -548,8 +548,8 @@ class PredictionService:
         self,
         base_features: PropertyFeatures,
         target_feature: str = "GrLivArea",
-        min_val: Optional[float] = None,
-        max_val: Optional[float] = None,
+        min_val: float | None = None,
+        max_val: float | None = None,
         steps: int = 15,
     ) -> SensitivityResponse:
         base_dict = base_features.to_dict()

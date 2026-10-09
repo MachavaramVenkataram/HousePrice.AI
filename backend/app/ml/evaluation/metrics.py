@@ -1,10 +1,11 @@
+from typing import Any
+
 import numpy as np
 import pandas as pd
-from typing import Dict, Any, List
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 
-def calculate_regression_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> Dict[str, float]:
+def calculate_regression_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> dict[str, float]:
     """Calculate RMSE, MAE, R2, and MAPE on original price scale."""
     y_t = np.asarray(y_true, dtype=float)
     y_p = np.asarray(y_pred, dtype=float)
@@ -28,7 +29,7 @@ def calculate_regression_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> Dict
     }
 
 
-def analyze_residuals(y_true: np.ndarray, y_pred: np.ndarray) -> Dict[str, Any]:
+def analyze_residuals(y_true: np.ndarray, y_pred: np.ndarray) -> dict[str, Any]:
     """Detailed residual diagnostics for production model validation."""
     y_t = np.asarray(y_true, dtype=float)
     y_p = np.asarray(y_pred, dtype=float)
@@ -56,7 +57,7 @@ def build_error_explorer(
     y_true: np.ndarray,
     y_pred: np.ndarray,
     top_n: int = 50,
-) -> List[Dict[str, Any]]:
+) -> list[dict[str, Any]]:
     """Generates structured records for the Prediction Error Explorer."""
     y_t = np.asarray(y_true, dtype=float)
     y_p = np.asarray(y_pred, dtype=float)

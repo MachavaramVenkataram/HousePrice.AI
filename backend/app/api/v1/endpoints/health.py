@@ -1,5 +1,7 @@
 import os
+
 from fastapi import APIRouter
+
 from ....core.config import settings
 from ....services.prediction_service import ARTIFACTS_DIR
 
