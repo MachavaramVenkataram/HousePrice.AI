@@ -1,0 +1,26 @@
+stages:
+  ingest:
+    cmd: python -c "from backend.app.ml.train import main; print('Data tracked')"
+    deps:
+      - data/ames_housing.csv
+    outs:
+      - data/data_profile.json
+
+  train:
+    cmd: python -m backend.app.ml.train
+    deps:
+      - data/ames_housing.csv
+      - backend/app/ml/preprocessing/features.py
+      - backend/app/ml/preprocessing/pipeline.py
+      - backend/app/ml/models/baselines.py
+      - backend/app/ml/models/advanced.py
+    outs:
+      - backend/app/ml/artifacts/best_model.joblib
+      - backend/app/ml/artifacts/preprocessor.joblib
+      - backend/app/ml/artifacts/conformal_predictor.joblib
+      - backend/app/ml/artifacts/shap_explainer.joblib
+    metrics:
+      - backend/app/ml/artifacts/benchmark_results.json:
+          cache: false
+      - backend/app/ml/artifacts/residual_diagnostics.json:
+          cache: false

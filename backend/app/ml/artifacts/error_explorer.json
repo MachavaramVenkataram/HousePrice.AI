@@ -1,0 +1,752 @@
+[
+  {
+    "id": 140,
+    "actual_price": 755000.0,
+    "predicted_price": 485073.73,
+    "residual": 269926.27,
+    "absolute_error": 269926.27,
+    "relative_error_pct": 35.75,
+    "key_features": {
+      "GrLivArea": 4316,
+      "OverallQual": 10,
+      "YearBuilt": 1994,
+      "Neighborhood": "NoRidge",
+      "TotalBsmtSF": 2444
+    }
+  },
+  {
+    "id": 75,
+    "actual_price": 611657.0,
+    "predicted_price": 435290.21,
+    "residual": 176366.79,
+    "absolute_error": 176366.79,
+    "relative_error_pct": 28.83,
+    "key_features": {
+      "GrLivArea": 2364,
+      "OverallQual": 9,
+      "YearBuilt": 2009,
+      "Neighborhood": "NridgHt",
+      "TotalBsmtSF": 2330
+    }
+  },
+  {
+    "id": 169,
+    "actual_price": 556581.0,
+    "predicted_price": 421382.74,
+    "residual": 135198.26,
+    "absolute_error": 135198.26,
+    "relative_error_pct": 24.29,
+    "key_features": {
+      "GrLivArea": 2868,
+      "OverallQual": 9,
+      "YearBuilt": 2005,
+      "Neighborhood": "StoneBr",
+      "TotalBsmtSF": 1992
+    }
+  },
+  {
+    "id": 44,
+    "actual_price": 253293.0,
+    "predicted_price": 355682.23,
+    "residual": -102389.23,
+    "absolute_error": 102389.23,
+    "relative_error_pct": 40.42,
+    "key_features": {
+      "GrLivArea": 2042,
+      "OverallQual": 8,
+      "YearBuilt": 2008,
+      "Neighborhood": "NridgHt",
+      "TotalBsmtSF": 2042
+    }
+  },
+  {
+    "id": 168,
+    "actual_price": 276000.0,
+    "predicted_price": 360678.39,
+    "residual": -84678.39,
+    "absolute_error": 84678.39,
+    "relative_error_pct": 30.68,
+    "key_features": {
+      "GrLivArea": 2574,
+      "OverallQual": 8,
+      "YearBuilt": 2007,
+      "Neighborhood": "CollgCr",
+      "TotalBsmtSF": 1482
+    }
+  },
+  {
+    "id": 7,
+    "actual_price": 311500.0,
+    "predicted_price": 230934.87,
+    "residual": 80565.13,
+    "absolute_error": 80565.13,
+    "relative_error_pct": 25.86,
+    "key_features": {
+      "GrLivArea": 1954,
+      "OverallQual": 7,
+      "YearBuilt": 1939,
+      "Neighborhood": "Crawfor",
+      "TotalBsmtSF": 798
+    }
+  },
+  {
+    "id": 279,
+    "actual_price": 143000.0,
+    "predicted_price": 223526.97,
+    "residual": -80526.97,
+    "absolute_error": 80526.97,
+    "relative_error_pct": 56.31,
+    "key_features": {
+      "GrLivArea": 1473,
+      "OverallQual": 5,
+      "YearBuilt": 1968,
+      "Neighborhood": "ClearCr",
+      "TotalBsmtSF": 1437
+    }
+  },
+  {
+    "id": 261,
+    "actual_price": 395000.0,
+    "predicted_price": 319155.56,
+    "residual": 75844.44,
+    "absolute_error": 75844.44,
+    "relative_error_pct": 19.2,
+    "key_features": {
+      "GrLivArea": 1973,
+      "OverallQual": 8,
+      "YearBuilt": 2006,
+      "Neighborhood": "NridgHt",
+      "TotalBsmtSF": 1935
+    }
+  },
+  {
+    "id": 271,
+    "actual_price": 465000.0,
+    "predicted_price": 402658.15,
+    "residual": 62341.85,
+    "absolute_error": 62341.85,
+    "relative_error_pct": 13.41,
+    "key_features": {
+      "GrLivArea": 2076,
+      "OverallQual": 10,
+      "YearBuilt": 2006,
+      "Neighborhood": "NridgHt",
+      "TotalBsmtSF": 2076
+    }
+  },
+  {
+    "id": 196,
+    "actual_price": 225000.0,
+    "predicted_price": 169405.63,
+    "residual": 55594.37,
+    "absolute_error": 55594.37,
+    "relative_error_pct": 24.71,
+    "key_features": {
+      "GrLivArea": 2008,
+      "OverallQual": 5,
+      "YearBuilt": 1948,
+      "Neighborhood": "Edwards",
+      "TotalBsmtSF": 896
+    }
+  },
+  {
+    "id": 49,
+    "actual_price": 451950.0,
+    "predicted_price": 399877.26,
+    "residual": 52072.74,
+    "absolute_error": 52072.74,
+    "relative_error_pct": 11.52,
+    "key_features": {
+      "GrLivArea": 2296,
+      "OverallQual": 10,
+      "YearBuilt": 2008,
+      "Neighborhood": "NridgHt",
+      "TotalBsmtSF": 1722
+    }
+  },
+  {
+    "id": 244,
+    "actual_price": 438780.0,
+    "predicted_price": 387393.25,
+    "residual": 51386.75,
+    "absolute_error": 51386.75,
+    "relative_error_pct": 11.71,
+    "key_features": {
+      "GrLivArea": 2945,
+      "OverallQual": 10,
+      "YearBuilt": 2006,
+      "Neighborhood": "StoneBr",
+      "TotalBsmtSF": 1410
+    }
+  },
+  {
+    "id": 264,
+    "actual_price": 275000.0,
+    "predicted_price": 223913.27,
+    "residual": 51086.73,
+    "absolute_error": 51086.73,
+    "relative_error_pct": 18.58,
+    "key_features": {
+      "GrLivArea": 1644,
+      "OverallQual": 7,
+      "YearBuilt": 1989,
+      "Neighborhood": "SawyerW",
+      "TotalBsmtSF": 1518
+    }
+  },
+  {
+    "id": 239,
+    "actual_price": 277000.0,
+    "predicted_price": 230236.93,
+    "residual": 46763.07,
+    "absolute_error": 46763.07,
+    "relative_error_pct": 16.88,
+    "key_features": {
+      "GrLivArea": 2062,
+      "OverallQual": 7,
+      "YearBuilt": 1988,
+      "Neighborhood": "SawyerW",
+      "TotalBsmtSF": 1157
+    }
+  },
+  {
+    "id": 198,
+    "actual_price": 40000.0,
+    "predicted_price": 83596.78,
+    "residual": -43596.78,
+    "absolute_error": 43596.78,
+    "relative_error_pct": 108.99,
+    "key_features": {
+      "GrLivArea": 1317,
+      "OverallQual": 4,
+      "YearBuilt": 1920,
+      "Neighborhood": "IDOTRR",
+      "TotalBsmtSF": 649
+    }
+  },
+  {
+    "id": 228,
+    "actual_price": 64500.0,
+    "predicted_price": 108061.11,
+    "residual": -43561.11,
+    "absolute_error": 43561.11,
+    "relative_error_pct": 67.54,
+    "key_features": {
+      "GrLivArea": 968,
+      "OverallQual": 4,
+      "YearBuilt": 1927,
+      "Neighborhood": "OldTown",
+      "TotalBsmtSF": 656
+    }
+  },
+  {
+    "id": 120,
+    "actual_price": 284000.0,
+    "predicted_price": 325949.73,
+    "residual": -41949.73,
+    "absolute_error": 41949.73,
+    "relative_error_pct": 14.77,
+    "key_features": {
+      "GrLivArea": 1629,
+      "OverallQual": 8,
+      "YearBuilt": 2003,
+      "Neighborhood": "NridgHt",
+      "TotalBsmtSF": 3206
+    }
+  },
+  {
+    "id": 182,
+    "actual_price": 55993.0,
+    "predicted_price": 96185.73,
+    "residual": -40192.73,
+    "absolute_error": 40192.73,
+    "relative_error_pct": 71.78,
+    "key_features": {
+      "GrLivArea": 1044,
+      "OverallQual": 5,
+      "YearBuilt": 1952,
+      "Neighborhood": "IDOTRR",
+      "TotalBsmtSF": 540
+    }
+  },
+  {
+    "id": 137,
+    "actual_price": 367294.0,
+    "predicted_price": 327354.07,
+    "residual": 39939.93,
+    "absolute_error": 39939.93,
+    "relative_error_pct": 10.87,
+    "key_features": {
+      "GrLivArea": 1702,
+      "OverallQual": 9,
+      "YearBuilt": 2008,
+      "Neighborhood": "NridgHt",
+      "TotalBsmtSF": 1702
+    }
+  },
+  {
+    "id": 78,
+    "actual_price": 341000.0,
+    "predicted_price": 301339.44,
+    "residual": 39660.56,
+    "absolute_error": 39660.56,
+    "relative_error_pct": 11.63,
+    "key_features": {
+      "GrLivArea": 2418,
+      "OverallQual": 7,
+      "YearBuilt": 1993,
+      "Neighborhood": "NoRidge",
+      "TotalBsmtSF": 1311
+    }
+  },
+  {
+    "id": 65,
+    "actual_price": 283463.0,
+    "predicted_price": 321982.4,
+    "residual": -38519.4,
+    "absolute_error": 38519.4,
+    "relative_error_pct": 13.59,
+    "key_features": {
+      "GrLivArea": 1776,
+      "OverallQual": 8,
+      "YearBuilt": 2006,
+      "Neighborhood": "Timber",
+      "TotalBsmtSF": 1732
+    }
+  },
+  {
+    "id": 110,
+    "actual_price": 135000.0,
+    "predicted_price": 173305.81,
+    "residual": -38305.81,
+    "absolute_error": 38305.81,
+    "relative_error_pct": 28.37,
+    "key_features": {
+      "GrLivArea": 2080,
+      "OverallQual": 5,
+      "YearBuilt": 1969,
+      "Neighborhood": "NAmes",
+      "TotalBsmtSF": 1040
+    }
+  },
+  {
+    "id": 242,
+    "actual_price": 242000.0,
+    "predicted_price": 279296.24,
+    "residual": -37296.24,
+    "absolute_error": 37296.24,
+    "relative_error_pct": 15.41,
+    "key_features": {
+      "GrLivArea": 2978,
+      "OverallQual": 7,
+      "YearBuilt": 1967,
+      "Neighborhood": "NAmes",
+      "TotalBsmtSF": 710
+    }
+  },
+  {
+    "id": 222,
+    "actual_price": 254000.0,
+    "predicted_price": 216789.71,
+    "residual": 37210.29,
+    "absolute_error": 37210.29,
+    "relative_error_pct": 14.65,
+    "key_features": {
+      "GrLivArea": 1324,
+      "OverallQual": 8,
+      "YearBuilt": 2006,
+      "Neighborhood": "NridgHt",
+      "TotalBsmtSF": 1324
+    }
+  },
+  {
+    "id": 59,
+    "actual_price": 107000.0,
+    "predicted_price": 142914.29,
+    "residual": -35914.29,
+    "absolute_error": 35914.29,
+    "relative_error_pct": 33.56,
+    "key_features": {
+      "GrLivArea": 1117,
+      "OverallQual": 6,
+      "YearBuilt": 1976,
+      "Neighborhood": "Edwards",
+      "TotalBsmtSF": 1029
+    }
+  },
+  {
+    "id": 77,
+    "actual_price": 348000.0,
+    "predicted_price": 314220.94,
+    "residual": 33779.06,
+    "absolute_error": 33779.06,
+    "relative_error_pct": 9.71,
+    "key_features": {
+      "GrLivArea": 2392,
+      "OverallQual": 8,
+      "YearBuilt": 1997,
+      "Neighborhood": "NoRidge",
+      "TotalBsmtSF": 1396
+    }
+  },
+  {
+    "id": 224,
+    "actual_price": 66500.0,
+    "predicted_price": 99580.12,
+    "residual": -33080.12,
+    "absolute_error": 33080.12,
+    "relative_error_pct": 49.74,
+    "key_features": {
+      "GrLivArea": 1131,
+      "OverallQual": 5,
+      "YearBuilt": 1941,
+      "Neighborhood": "OldTown",
+      "TotalBsmtSF": 676
+    }
+  },
+  {
+    "id": 288,
+    "actual_price": 89471.0,
+    "predicted_price": 122419.86,
+    "residual": -32948.86,
+    "absolute_error": 32948.86,
+    "relative_error_pct": 36.83,
+    "key_features": {
+      "GrLivArea": 1131,
+      "OverallQual": 4,
+      "YearBuilt": 1937,
+      "Neighborhood": "OldTown",
+      "TotalBsmtSF": 907
+    }
+  },
+  {
+    "id": 141,
+    "actual_price": 403000.0,
+    "predicted_price": 370291.46,
+    "residual": 32708.54,
+    "absolute_error": 32708.54,
+    "relative_error_pct": 8.12,
+    "key_features": {
+      "GrLivArea": 2794,
+      "OverallQual": 8,
+      "YearBuilt": 1995,
+      "Neighborhood": "NoRidge",
+      "TotalBsmtSF": 1462
+    }
+  },
+  {
+    "id": 147,
+    "actual_price": 250000.0,
+    "predicted_price": 217584.8,
+    "residual": 32415.2,
+    "absolute_error": 32415.2,
+    "relative_error_pct": 12.97,
+    "key_features": {
+      "GrLivArea": 2057,
+      "OverallQual": 7,
+      "YearBuilt": 1936,
+      "Neighborhood": "Crawfor",
+      "TotalBsmtSF": 1017
+    }
+  },
+  {
+    "id": 272,
+    "actual_price": 180000.0,
+    "predicted_price": 212368.98,
+    "residual": -32368.98,
+    "absolute_error": 32368.98,
+    "relative_error_pct": 17.98,
+    "key_features": {
+      "GrLivArea": 1337,
+      "OverallQual": 8,
+      "YearBuilt": 1993,
+      "Neighborhood": "StoneBr",
+      "TotalBsmtSF": 1337
+    }
+  },
+  {
+    "id": 199,
+    "actual_price": 172500.0,
+    "predicted_price": 204493.3,
+    "residual": -31993.3,
+    "absolute_error": 31993.3,
+    "relative_error_pct": 18.55,
+    "key_features": {
+      "GrLivArea": 1739,
+      "OverallQual": 8,
+      "YearBuilt": 1999,
+      "Neighborhood": "Somerst",
+      "TotalBsmtSF": 970
+    }
+  },
+  {
+    "id": 32,
+    "actual_price": 284000.0,
+    "predicted_price": 252444.07,
+    "residual": 31555.93,
+    "absolute_error": 31555.93,
+    "relative_error_pct": 11.11,
+    "key_features": {
+      "GrLivArea": 2046,
+      "OverallQual": 7,
+      "YearBuilt": 2003,
+      "Neighborhood": "NridgHt",
+      "TotalBsmtSF": 998
+    }
+  },
+  {
+    "id": 135,
+    "actual_price": 35311.0,
+    "predicted_price": 66553.12,
+    "residual": -31242.12,
+    "absolute_error": 31242.12,
+    "relative_error_pct": 88.48,
+    "key_features": {
+      "GrLivArea": 480,
+      "OverallQual": 2,
+      "YearBuilt": 1949,
+      "Neighborhood": "IDOTRR",
+      "TotalBsmtSF": 480
+    }
+  },
+  {
+    "id": 90,
+    "actual_price": 155835.0,
+    "predicted_price": 186521.94,
+    "residual": -30686.94,
+    "absolute_error": 30686.94,
+    "relative_error_pct": 19.69,
+    "key_features": {
+      "GrLivArea": 1456,
+      "OverallQual": 7,
+      "YearBuilt": 2006,
+      "Neighborhood": "CollgCr",
+      "TotalBsmtSF": 728
+    }
+  },
+  {
+    "id": 94,
+    "actual_price": 301000.0,
+    "predicted_price": 270636.22,
+    "residual": 30363.78,
+    "absolute_error": 30363.78,
+    "relative_error_pct": 10.09,
+    "key_features": {
+      "GrLivArea": 2730,
+      "OverallQual": 7,
+      "YearBuilt": 1986,
+      "Neighborhood": "SawyerW",
+      "TotalBsmtSF": 1502
+    }
+  },
+  {
+    "id": 97,
+    "actual_price": 205000.0,
+    "predicted_price": 174847.62,
+    "residual": 30152.38,
+    "absolute_error": 30152.38,
+    "relative_error_pct": 14.71,
+    "key_features": {
+      "GrLivArea": 1548,
+      "OverallQual": 7,
+      "YearBuilt": 1925,
+      "Neighborhood": "BrkSide",
+      "TotalBsmtSF": 952
+    }
+  },
+  {
+    "id": 28,
+    "actual_price": 141000.0,
+    "predicted_price": 111124.43,
+    "residual": 29875.57,
+    "absolute_error": 29875.57,
+    "relative_error_pct": 21.19,
+    "key_features": {
+      "GrLivArea": 864,
+      "OverallQual": 4,
+      "YearBuilt": 1951,
+      "Neighborhood": "Gilbert",
+      "TotalBsmtSF": 864
+    }
+  },
+  {
+    "id": 58,
+    "actual_price": 175000.0,
+    "predicted_price": 145612.82,
+    "residual": 29387.18,
+    "absolute_error": 29387.18,
+    "relative_error_pct": 16.79,
+    "key_features": {
+      "GrLivArea": 1126,
+      "OverallQual": 5,
+      "YearBuilt": 1977,
+      "Neighborhood": "NWAmes",
+      "TotalBsmtSF": 1126
+    }
+  },
+  {
+    "id": 68,
+    "actual_price": 305000.0,
+    "predicted_price": 333746.05,
+    "residual": -28746.05,
+    "absolute_error": 28746.05,
+    "relative_error_pct": 9.42,
+    "key_features": {
+      "GrLivArea": 2262,
+      "OverallQual": 8,
+      "YearBuilt": 2003,
+      "Neighborhood": "Timber",
+      "TotalBsmtSF": 1482
+    }
+  },
+  {
+    "id": 203,
+    "actual_price": 147000.0,
+    "predicted_price": 118344.66,
+    "residual": 28655.34,
+    "absolute_error": 28655.34,
+    "relative_error_pct": 19.49,
+    "key_features": {
+      "GrLivArea": 1344,
+      "OverallQual": 5,
+      "YearBuilt": 1920,
+      "Neighborhood": "IDOTRR",
+      "TotalBsmtSF": 672
+    }
+  },
+  {
+    "id": 178,
+    "actual_price": 187500.0,
+    "predicted_price": 215443.37,
+    "residual": -27943.37,
+    "absolute_error": 27943.37,
+    "relative_error_pct": 14.9,
+    "key_features": {
+      "GrLivArea": 1717,
+      "OverallQual": 7,
+      "YearBuilt": 1990,
+      "Neighborhood": "Timber",
+      "TotalBsmtSF": 1156
+    }
+  },
+  {
+    "id": 66,
+    "actual_price": 243000.0,
+    "predicted_price": 215308.44,
+    "residual": 27691.56,
+    "absolute_error": 27691.56,
+    "relative_error_pct": 11.4,
+    "key_features": {
+      "GrLivArea": 2158,
+      "OverallQual": 6,
+      "YearBuilt": 1950,
+      "Neighborhood": "Edwards",
+      "TotalBsmtSF": 1202
+    }
+  },
+  {
+    "id": 200,
+    "actual_price": 154900.0,
+    "predicted_price": 127320.37,
+    "residual": 27579.63,
+    "absolute_error": 27579.63,
+    "relative_error_pct": 17.8,
+    "key_features": {
+      "GrLivArea": 1343,
+      "OverallQual": 5,
+      "YearBuilt": 1921,
+      "Neighborhood": "Crawfor",
+      "TotalBsmtSF": 731
+    }
+  },
+  {
+    "id": 170,
+    "actual_price": 244400.0,
+    "predicted_price": 217043.31,
+    "residual": 27356.69,
+    "absolute_error": 27356.69,
+    "relative_error_pct": 11.19,
+    "key_features": {
+      "GrLivArea": 2403,
+      "OverallQual": 7,
+      "YearBuilt": 1940,
+      "Neighborhood": "ClearCr",
+      "TotalBsmtSF": 1032
+    }
+  },
+  {
+    "id": 103,
+    "actual_price": 244000.0,
+    "predicted_price": 271240.28,
+    "residual": -27240.28,
+    "absolute_error": 27240.28,
+    "relative_error_pct": 11.16,
+    "key_features": {
+      "GrLivArea": 2223,
+      "OverallQual": 7,
+      "YearBuilt": 1973,
+      "Neighborhood": "NAmes",
+      "TotalBsmtSF": 2223
+    }
+  },
+  {
+    "id": 201,
+    "actual_price": 280000.0,
+    "predicted_price": 253160.78,
+    "residual": 26839.22,
+    "absolute_error": 26839.22,
+    "relative_error_pct": 9.59,
+    "key_features": {
+      "GrLivArea": 1533,
+      "OverallQual": 7,
+      "YearBuilt": 1975,
+      "Neighborhood": "ClearCr",
+      "TotalBsmtSF": 1533
+    }
+  },
+  {
+    "id": 42,
+    "actual_price": 205000.0,
+    "predicted_price": 230711.72,
+    "residual": -25711.72,
+    "absolute_error": 25711.72,
+    "relative_error_pct": 12.54,
+    "key_features": {
+      "GrLivArea": 2110,
+      "OverallQual": 7,
+      "YearBuilt": 1994,
+      "Neighborhood": "SawyerW",
+      "TotalBsmtSF": 948
+    }
+  },
+  {
+    "id": 13,
+    "actual_price": 81000.0,
+    "predicted_price": 106163.63,
+    "residual": -25163.63,
+    "absolute_error": 25163.63,
+    "relative_error_pct": 31.07,
+    "key_features": {
+      "GrLivArea": 894,
+      "OverallQual": 3,
+      "YearBuilt": 1935,
+      "Neighborhood": "IDOTRR",
+      "TotalBsmtSF": 894
+    }
+  },
+  {
+    "id": 167,
+    "actual_price": 239000.0,
+    "predicted_price": 214604.77,
+    "residual": 24395.23,
+    "absolute_error": 24395.23,
+    "relative_error_pct": 10.21,
+    "key_features": {
+      "GrLivArea": 1950,
+      "OverallQual": 7,
+      "YearBuilt": 1997,
+      "Neighborhood": "Somerst",
+      "TotalBsmtSF": 975
+    }
+  }
+]

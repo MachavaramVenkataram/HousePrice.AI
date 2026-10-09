@@ -1,0 +1,13 @@
+{
+  "mean_residual": 2068.88,
+  "median_residual": 498.15,
+  "std_residual": 28871.63,
+  "min_residual": -102389.23,
+  "max_residual": 269926.27,
+  "rmse": 28945.66,
+  "mae": 15945.06,
+  "median_absolute_error": 9609.85,
+  "pct_within_5_percent": 42.12,
+  "pct_within_10_percent": 70.89,
+  "pct_within_20_percent": 91.78
+}

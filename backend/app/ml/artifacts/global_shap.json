@@ -1,0 +1,102 @@
+[
+  {
+    "feature": "TotalSF",
+    "importance": 0.0777
+  },
+  {
+    "feature": "OverallQual",
+    "importance": 0.0647
+  },
+  {
+    "feature": "GrLivArea",
+    "importance": 0.025
+  },
+  {
+    "feature": "TotalBath",
+    "importance": 0.0246
+  },
+  {
+    "feature": "QualityScore",
+    "importance": 0.0229
+  },
+  {
+    "feature": "Fireplaces",
+    "importance": 0.0201
+  },
+  {
+    "feature": "YearRemodAdd",
+    "importance": 0.0198
+  },
+  {
+    "feature": "LotArea",
+    "importance": 0.0187
+  },
+  {
+    "feature": "1stFlrSF",
+    "importance": 0.0185
+  },
+  {
+    "feature": "YearBuilt",
+    "importance": 0.0163
+  },
+  {
+    "feature": "GarageArea",
+    "importance": 0.0163
+  },
+  {
+    "feature": "GarageCars",
+    "importance": 0.0148
+  },
+  {
+    "feature": "BsmtFullBath",
+    "importance": 0.0122
+  },
+  {
+    "feature": "HouseAge",
+    "importance": 0.0116
+  },
+  {
+    "feature": "HasFireplace",
+    "importance": 0.0102
+  },
+  {
+    "feature": "OverallCond",
+    "importance": 0.0091
+  },
+  {
+    "feature": "RemodelAge",
+    "importance": 0.009
+  },
+  {
+    "feature": "MSZoning_RM",
+    "importance": 0.0076
+  },
+  {
+    "feature": "WoodDeckSF",
+    "importance": 0.0073
+  },
+  {
+    "feature": "KitchenQual_Gd",
+    "importance": 0.007
+  },
+  {
+    "feature": "HeatingQC_Ex",
+    "importance": 0.0069
+  },
+  {
+    "feature": "BsmtQual_Ex",
+    "importance": 0.0068
+  },
+  {
+    "feature": "PorchSF",
+    "importance": 0.0059
+  },
+  {
+    "feature": "LotFrontage",
+    "importance": 0.0058
+  },
+  {
+    "feature": "Neighborhood_Crawfor",
+    "importance": 0.0051
+  }
+]

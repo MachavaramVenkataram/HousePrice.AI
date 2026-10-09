@@ -1,0 +1,2338 @@
+[
+  {
+    "actual": 154500.0,
+    "predicted": 142798.01,
+    "error": 11701.99,
+    "abs_error_pct": 7.57,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 1068.0
+  },
+  {
+    "actual": 325000.0,
+    "predicted": 336984.87,
+    "error": -11984.87,
+    "abs_error_pct": 3.69,
+    "neighborhood": "NoRidge",
+    "gr_liv_area": 2622.0
+  },
+  {
+    "actual": 115000.0,
+    "predicted": 113277.12,
+    "error": 1722.88,
+    "abs_error_pct": 1.5,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 1028.0
+  },
+  {
+    "actual": 159000.0,
+    "predicted": 156375.52,
+    "error": 2624.48,
+    "abs_error_pct": 1.65,
+    "neighborhood": "BrkSide",
+    "gr_liv_area": 1664.0
+  },
+  {
+    "actual": 315500.0,
+    "predicted": 316228.21,
+    "error": -728.21,
+    "abs_error_pct": 0.23,
+    "neighborhood": "Timber",
+    "gr_liv_area": 1620.0
+  },
+  {
+    "actual": 75500.0,
+    "predicted": 85859.57,
+    "error": -10359.57,
+    "abs_error_pct": 13.72,
+    "neighborhood": "MeadowV",
+    "gr_liv_area": 630.0
+  },
+  {
+    "actual": 311500.0,
+    "predicted": 230934.87,
+    "error": 80565.13,
+    "abs_error_pct": 25.86,
+    "neighborhood": "Crawfor",
+    "gr_liv_area": 1954.0
+  },
+  {
+    "actual": 146000.0,
+    "predicted": 148282.85,
+    "error": -2282.85,
+    "abs_error_pct": 1.56,
+    "neighborhood": "NPkVill",
+    "gr_liv_area": 1456.0
+  },
+  {
+    "actual": 84500.0,
+    "predicted": 83042.49,
+    "error": 1457.51,
+    "abs_error_pct": 1.72,
+    "neighborhood": "MeadowV",
+    "gr_liv_area": 630.0
+  },
+  {
+    "actual": 135500.0,
+    "predicted": 126573.17,
+    "error": 8926.83,
+    "abs_error_pct": 6.59,
+    "neighborhood": "Edwards",
+    "gr_liv_area": 1393.0
+  },
+  {
+    "actual": 145000.0,
+    "predicted": 152248.24,
+    "error": -7248.24,
+    "abs_error_pct": 5.0,
+    "neighborhood": "SWISU",
+    "gr_liv_area": 1477.0
+  },
+  {
+    "actual": 130000.0,
+    "predicted": 121513.88,
+    "error": 8486.12,
+    "abs_error_pct": 6.53,
+    "neighborhood": "Mitchel",
+    "gr_liv_area": 874.0
+  },
+  {
+    "actual": 81000.0,
+    "predicted": 106163.63,
+    "error": -25163.63,
+    "abs_error_pct": 31.07,
+    "neighborhood": "IDOTRR",
+    "gr_liv_area": 894.0
+  },
+  {
+    "actual": 214000.0,
+    "predicted": 202824.18,
+    "error": 11175.82,
+    "abs_error_pct": 5.22,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 1535.0
+  },
+  {
+    "actual": 181000.0,
+    "predicted": 178409.37,
+    "error": 2590.63,
+    "abs_error_pct": 1.43,
+    "neighborhood": "Gilbert",
+    "gr_liv_area": 1690.0
+  },
+  {
+    "actual": 134500.0,
+    "predicted": 131677.4,
+    "error": 2822.6,
+    "abs_error_pct": 2.1,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1008.0
+  },
+  {
+    "actual": 183500.0,
+    "predicted": 196103.5,
+    "error": -12603.5,
+    "abs_error_pct": 6.87,
+    "neighborhood": "Gilbert",
+    "gr_liv_area": 1720.0
+  },
+  {
+    "actual": 135000.0,
+    "predicted": 130804.53,
+    "error": 4195.47,
+    "abs_error_pct": 3.11,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1134.0
+  },
+  {
+    "actual": 118400.0,
+    "predicted": 115042.91,
+    "error": 3357.09,
+    "abs_error_pct": 2.84,
+    "neighborhood": "IDOTRR",
+    "gr_liv_area": 1012.0
+  },
+  {
+    "actual": 226000.0,
+    "predicted": 217881.76,
+    "error": 8118.24,
+    "abs_error_pct": 3.59,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1479.0
+  },
+  {
+    "actual": 155000.0,
+    "predicted": 169943.1,
+    "error": -14943.1,
+    "abs_error_pct": 9.64,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 1803.0
+  },
+  {
+    "actual": 210000.0,
+    "predicted": 204442.48,
+    "error": 5557.52,
+    "abs_error_pct": 2.65,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1590.0
+  },
+  {
+    "actual": 173500.0,
+    "predicted": 171253.42,
+    "error": 2246.58,
+    "abs_error_pct": 1.29,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1476.0
+  },
+  {
+    "actual": 129000.0,
+    "predicted": 128878.42,
+    "error": 121.58,
+    "abs_error_pct": 0.09,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 936.0
+  },
+  {
+    "actual": 192000.0,
+    "predicted": 207331.16,
+    "error": -15331.16,
+    "abs_error_pct": 7.98,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1431.0
+  },
+  {
+    "actual": 153900.0,
+    "predicted": 156872.25,
+    "error": -2972.25,
+    "abs_error_pct": 1.93,
+    "neighborhood": "SawyerW",
+    "gr_liv_area": 1199.0
+  },
+  {
+    "actual": 181134.0,
+    "predicted": 189138.25,
+    "error": -8004.25,
+    "abs_error_pct": 4.42,
+    "neighborhood": "Gilbert",
+    "gr_liv_area": 1340.0
+  },
+  {
+    "actual": 141000.0,
+    "predicted": 111124.43,
+    "error": 29875.57,
+    "abs_error_pct": 21.19,
+    "neighborhood": "Gilbert",
+    "gr_liv_area": 864.0
+  },
+  {
+    "actual": 181000.0,
+    "predicted": 181649.8,
+    "error": -649.8,
+    "abs_error_pct": 0.36,
+    "neighborhood": "Gilbert",
+    "gr_liv_area": 1604.0
+  },
+  {
+    "actual": 208900.0,
+    "predicted": 197507.02,
+    "error": 11392.98,
+    "abs_error_pct": 5.45,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1352.0
+  },
+  {
+    "actual": 127000.0,
+    "predicted": 125889.8,
+    "error": 1110.2,
+    "abs_error_pct": 0.87,
+    "neighborhood": "BrkSide",
+    "gr_liv_area": 1252.0
+  },
+  {
+    "actual": 284000.0,
+    "predicted": 252444.07,
+    "error": 31555.93,
+    "abs_error_pct": 11.11,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 2046.0
+  },
+  {
+    "actual": 200500.0,
+    "predicted": 216802.65,
+    "error": -16302.65,
+    "abs_error_pct": 8.13,
+    "neighborhood": "ClearCr",
+    "gr_liv_area": 3086.0
+  },
+  {
+    "actual": 135750.0,
+    "predicted": 115749.06,
+    "error": 20000.94,
+    "abs_error_pct": 14.73,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 952.0
+  },
+  {
+    "actual": 255000.0,
+    "predicted": 272750.17,
+    "error": -17750.17,
+    "abs_error_pct": 6.96,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1636.0
+  },
+  {
+    "actual": 140000.0,
+    "predicted": 152136.58,
+    "error": -12136.58,
+    "abs_error_pct": 8.67,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1136.0
+  },
+  {
+    "actual": 138000.0,
+    "predicted": 142054.98,
+    "error": -4054.98,
+    "abs_error_pct": 2.94,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1904.0
+  },
+  {
+    "actual": 219500.0,
+    "predicted": 204686.06,
+    "error": 14813.94,
+    "abs_error_pct": 6.75,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1928.0
+  },
+  {
+    "actual": 310000.0,
+    "predicted": 331472.85,
+    "error": -21472.85,
+    "abs_error_pct": 6.93,
+    "neighborhood": "NoRidge",
+    "gr_liv_area": 2520.0
+  },
+  {
+    "actual": 97000.0,
+    "predicted": 97348.45,
+    "error": -348.45,
+    "abs_error_pct": 0.36,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 882.0
+  },
+  {
+    "actual": 114500.0,
+    "predicted": 121524.99,
+    "error": -7024.99,
+    "abs_error_pct": 6.14,
+    "neighborhood": "BrkSide",
+    "gr_liv_area": 1176.0
+  },
+  {
+    "actual": 205000.0,
+    "predicted": 230711.72,
+    "error": -25711.72,
+    "abs_error_pct": 12.54,
+    "neighborhood": "SawyerW",
+    "gr_liv_area": 2110.0
+  },
+  {
+    "actual": 119500.0,
+    "predicted": 117083.31,
+    "error": 2416.69,
+    "abs_error_pct": 2.02,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 950.0
+  },
+  {
+    "actual": 253293.0,
+    "predicted": 355682.23,
+    "error": -102389.23,
+    "abs_error_pct": 40.42,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 2042.0
+  },
+  {
+    "actual": 128500.0,
+    "predicted": 128352.96,
+    "error": 147.04,
+    "abs_error_pct": 0.11,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 988.0
+  },
+  {
+    "actual": 117500.0,
+    "predicted": 132575.19,
+    "error": -15075.19,
+    "abs_error_pct": 12.83,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 2210.0
+  },
+  {
+    "actual": 115000.0,
+    "predicted": 111979.44,
+    "error": 3020.56,
+    "abs_error_pct": 2.63,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 912.0
+  },
+  {
+    "actual": 127000.0,
+    "predicted": 128818.18,
+    "error": -1818.18,
+    "abs_error_pct": 1.43,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 955.0
+  },
+  {
+    "actual": 451950.0,
+    "predicted": 399877.26,
+    "error": 52072.74,
+    "abs_error_pct": 11.52,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 2296.0
+  },
+  {
+    "actual": 144000.0,
+    "predicted": 134534.34,
+    "error": 9465.66,
+    "abs_error_pct": 6.57,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1524.0
+  },
+  {
+    "actual": 119000.0,
+    "predicted": 116727.7,
+    "error": 2272.3,
+    "abs_error_pct": 1.91,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 988.0
+  },
+  {
+    "actual": 196000.0,
+    "predicted": 195870.54,
+    "error": 129.46,
+    "abs_error_pct": 0.07,
+    "neighborhood": "Mitchel",
+    "gr_liv_area": 1567.0
+  },
+  {
+    "actual": 115000.0,
+    "predicted": 109731.31,
+    "error": 5268.69,
+    "abs_error_pct": 4.58,
+    "neighborhood": "MeadowV",
+    "gr_liv_area": 1304.0
+  },
+  {
+    "actual": 287000.0,
+    "predicted": 288327.7,
+    "error": -1327.7,
+    "abs_error_pct": 0.46,
+    "neighborhood": "Timber",
+    "gr_liv_area": 2898.0
+  },
+  {
+    "actual": 144500.0,
+    "predicted": 145291.84,
+    "error": -791.84,
+    "abs_error_pct": 0.55,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 848.0
+  },
+  {
+    "actual": 260000.0,
+    "predicted": 241355.22,
+    "error": 18644.78,
+    "abs_error_pct": 7.17,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1734.0
+  },
+  {
+    "actual": 213000.0,
+    "predicted": 202694.58,
+    "error": 10305.42,
+    "abs_error_pct": 4.84,
+    "neighborhood": "SawyerW",
+    "gr_liv_area": 1775.0
+  },
+  {
+    "actual": 175000.0,
+    "predicted": 145612.82,
+    "error": 29387.18,
+    "abs_error_pct": 16.79,
+    "neighborhood": "NWAmes",
+    "gr_liv_area": 1126.0
+  },
+  {
+    "actual": 107000.0,
+    "predicted": 142914.29,
+    "error": -35914.29,
+    "abs_error_pct": 33.56,
+    "neighborhood": "Edwards",
+    "gr_liv_area": 1117.0
+  },
+  {
+    "actual": 107500.0,
+    "predicted": 116782.73,
+    "error": -9282.73,
+    "abs_error_pct": 8.64,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 827.0
+  },
+  {
+    "actual": 68500.0,
+    "predicted": 70382.84,
+    "error": -1882.84,
+    "abs_error_pct": 2.75,
+    "neighborhood": "BrkSide",
+    "gr_liv_area": 520.0
+  },
+  {
+    "actual": 154000.0,
+    "predicted": 154974.04,
+    "error": -974.04,
+    "abs_error_pct": 0.63,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1246.0
+  },
+  {
+    "actual": 317000.0,
+    "predicted": 314744.7,
+    "error": 2255.3,
+    "abs_error_pct": 0.71,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 2473.0
+  },
+  {
+    "actual": 264132.0,
+    "predicted": 269667.05,
+    "error": -5535.05,
+    "abs_error_pct": 2.1,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1506.0
+  },
+  {
+    "actual": 283463.0,
+    "predicted": 321982.4,
+    "error": -38519.4,
+    "abs_error_pct": 13.59,
+    "neighborhood": "Timber",
+    "gr_liv_area": 1776.0
+  },
+  {
+    "actual": 243000.0,
+    "predicted": 215308.44,
+    "error": 27691.56,
+    "abs_error_pct": 11.4,
+    "neighborhood": "Edwards",
+    "gr_liv_area": 2158.0
+  },
+  {
+    "actual": 109000.0,
+    "predicted": 108057.57,
+    "error": 942.43,
+    "abs_error_pct": 0.86,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 1034.0
+  },
+  {
+    "actual": 305000.0,
+    "predicted": 333746.05,
+    "error": -28746.05,
+    "abs_error_pct": 9.42,
+    "neighborhood": "Timber",
+    "gr_liv_area": 2262.0
+  },
+  {
+    "actual": 93500.0,
+    "predicted": 117030.31,
+    "error": -23530.31,
+    "abs_error_pct": 25.17,
+    "neighborhood": "Mitchel",
+    "gr_liv_area": 974.0
+  },
+  {
+    "actual": 176000.0,
+    "predicted": 158613.79,
+    "error": 17386.21,
+    "abs_error_pct": 9.88,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1458.0
+  },
+  {
+    "actual": 118858.0,
+    "predicted": 120218.69,
+    "error": -1360.69,
+    "abs_error_pct": 1.14,
+    "neighborhood": "SawyerW",
+    "gr_liv_area": 1535.0
+  },
+  {
+    "actual": 134000.0,
+    "predicted": 130799.41,
+    "error": 3200.59,
+    "abs_error_pct": 2.39,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 1211.0
+  },
+  {
+    "actual": 109008.0,
+    "predicted": 115972.91,
+    "error": -6964.91,
+    "abs_error_pct": 6.39,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 907.0
+  },
+  {
+    "actual": 93500.0,
+    "predicted": 88674.59,
+    "error": 4825.41,
+    "abs_error_pct": 5.16,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1040.0
+  },
+  {
+    "actual": 611657.0,
+    "predicted": 435290.21,
+    "error": 176366.79,
+    "abs_error_pct": 28.83,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 2364.0
+  },
+  {
+    "actual": 173000.0,
+    "predicted": 180610.1,
+    "error": -7610.1,
+    "abs_error_pct": 4.4,
+    "neighborhood": "ClearCr",
+    "gr_liv_area": 1291.0
+  },
+  {
+    "actual": 348000.0,
+    "predicted": 314220.94,
+    "error": 33779.06,
+    "abs_error_pct": 9.71,
+    "neighborhood": "NoRidge",
+    "gr_liv_area": 2392.0
+  },
+  {
+    "actual": 341000.0,
+    "predicted": 301339.44,
+    "error": 39660.56,
+    "abs_error_pct": 11.63,
+    "neighborhood": "NoRidge",
+    "gr_liv_area": 2418.0
+  },
+  {
+    "actual": 141000.0,
+    "predicted": 134367.48,
+    "error": 6632.52,
+    "abs_error_pct": 4.7,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1150.0
+  },
+  {
+    "actual": 124900.0,
+    "predicted": 111296.69,
+    "error": 13603.31,
+    "abs_error_pct": 10.89,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 780.0
+  },
+  {
+    "actual": 118000.0,
+    "predicted": 112994.98,
+    "error": 5005.02,
+    "abs_error_pct": 4.24,
+    "neighborhood": "BrDale",
+    "gr_liv_area": 987.0
+  },
+  {
+    "actual": 67000.0,
+    "predicted": 89010.25,
+    "error": -22010.25,
+    "abs_error_pct": 32.85,
+    "neighborhood": "IDOTRR",
+    "gr_liv_area": 1077.0
+  },
+  {
+    "actual": 113000.0,
+    "predicted": 131026.01,
+    "error": -18026.01,
+    "abs_error_pct": 15.95,
+    "neighborhood": "Mitchel",
+    "gr_liv_area": 988.0
+  },
+  {
+    "actual": 91300.0,
+    "predicted": 106938.69,
+    "error": -15638.69,
+    "abs_error_pct": 17.13,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 886.0
+  },
+  {
+    "actual": 149500.0,
+    "predicted": 149250.99,
+    "error": 249.01,
+    "abs_error_pct": 0.17,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 1400.0
+  },
+  {
+    "actual": 133000.0,
+    "predicted": 130062.34,
+    "error": 2937.66,
+    "abs_error_pct": 2.21,
+    "neighborhood": "BrkSide",
+    "gr_liv_area": 1573.0
+  },
+  {
+    "actual": 266000.0,
+    "predicted": 264330.85,
+    "error": 1669.15,
+    "abs_error_pct": 0.63,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1939.0
+  },
+  {
+    "actual": 190000.0,
+    "predicted": 207413.3,
+    "error": -17413.3,
+    "abs_error_pct": 9.16,
+    "neighborhood": "ClearCr",
+    "gr_liv_area": 1453.0
+  },
+  {
+    "actual": 155900.0,
+    "predicted": 143807.57,
+    "error": 12092.43,
+    "abs_error_pct": 7.76,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 848.0
+  },
+  {
+    "actual": 155835.0,
+    "predicted": 186521.94,
+    "error": -30686.94,
+    "abs_error_pct": 19.69,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1456.0
+  },
+  {
+    "actual": 153500.0,
+    "predicted": 147804.95,
+    "error": 5695.05,
+    "abs_error_pct": 3.71,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 1559.0
+  },
+  {
+    "actual": 152000.0,
+    "predicted": 153625.8,
+    "error": -1625.8,
+    "abs_error_pct": 1.07,
+    "neighborhood": "NWAmes",
+    "gr_liv_area": 1620.0
+  },
+  {
+    "actual": 124500.0,
+    "predicted": 120264.48,
+    "error": 4235.52,
+    "abs_error_pct": 3.4,
+    "neighborhood": "Mitchel",
+    "gr_liv_area": 816.0
+  },
+  {
+    "actual": 301000.0,
+    "predicted": 270636.22,
+    "error": 30363.78,
+    "abs_error_pct": 10.09,
+    "neighborhood": "SawyerW",
+    "gr_liv_area": 2730.0
+  },
+  {
+    "actual": 136500.0,
+    "predicted": 130831.02,
+    "error": 5668.98,
+    "abs_error_pct": 4.15,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 1768.0
+  },
+  {
+    "actual": 169990.0,
+    "predicted": 171491.97,
+    "error": -1501.97,
+    "abs_error_pct": 0.88,
+    "neighborhood": "Gilbert",
+    "gr_liv_area": 1316.0
+  },
+  {
+    "actual": 205000.0,
+    "predicted": 174847.62,
+    "error": 30152.38,
+    "abs_error_pct": 14.71,
+    "neighborhood": "BrkSide",
+    "gr_liv_area": 1548.0
+  },
+  {
+    "actual": 183900.0,
+    "predicted": 173494.99,
+    "error": 10405.01,
+    "abs_error_pct": 5.66,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1452.0
+  },
+  {
+    "actual": 204900.0,
+    "predicted": 211985.93,
+    "error": -7085.93,
+    "abs_error_pct": 3.46,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1498.0
+  },
+  {
+    "actual": 260000.0,
+    "predicted": 238087.84,
+    "error": 21912.16,
+    "abs_error_pct": 8.43,
+    "neighborhood": "NWAmes",
+    "gr_liv_area": 2353.0
+  },
+  {
+    "actual": 163500.0,
+    "predicted": 153099.43,
+    "error": 10400.57,
+    "abs_error_pct": 6.36,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1657.0
+  },
+  {
+    "actual": 224900.0,
+    "predicted": 202465.0,
+    "error": 22435.0,
+    "abs_error_pct": 9.98,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1768.0
+  },
+  {
+    "actual": 244000.0,
+    "predicted": 271240.28,
+    "error": -27240.28,
+    "abs_error_pct": 11.16,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 2223.0
+  },
+  {
+    "actual": 132000.0,
+    "predicted": 137228.29,
+    "error": -5228.29,
+    "abs_error_pct": 3.96,
+    "neighborhood": "BrkSide",
+    "gr_liv_area": 854.0
+  },
+  {
+    "actual": 194000.0,
+    "predicted": 195302.21,
+    "error": -1302.21,
+    "abs_error_pct": 0.67,
+    "neighborhood": "Veenker",
+    "gr_liv_area": 1432.0
+  },
+  {
+    "actual": 156500.0,
+    "predicted": 153129.45,
+    "error": 3370.55,
+    "abs_error_pct": 2.15,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1478.0
+  },
+  {
+    "actual": 156000.0,
+    "predicted": 149379.83,
+    "error": 6620.17,
+    "abs_error_pct": 4.24,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1026.0
+  },
+  {
+    "actual": 275000.0,
+    "predicted": 255590.47,
+    "error": 19409.53,
+    "abs_error_pct": 7.06,
+    "neighborhood": "StoneBr",
+    "gr_liv_area": 1742.0
+  },
+  {
+    "actual": 145000.0,
+    "predicted": 138942.76,
+    "error": 6057.24,
+    "abs_error_pct": 4.18,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 990.0
+  },
+  {
+    "actual": 135000.0,
+    "predicted": 173305.81,
+    "error": -38305.81,
+    "abs_error_pct": 28.37,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 2080.0
+  },
+  {
+    "actual": 60000.0,
+    "predicted": 62546.39,
+    "error": -2546.39,
+    "abs_error_pct": 4.24,
+    "neighborhood": "BrkSide",
+    "gr_liv_area": 800.0
+  },
+  {
+    "actual": 124000.0,
+    "predicted": 111571.38,
+    "error": 12428.62,
+    "abs_error_pct": 10.02,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1040.0
+  },
+  {
+    "actual": 127000.0,
+    "predicted": 141360.49,
+    "error": -14360.49,
+    "abs_error_pct": 11.31,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 1040.0
+  },
+  {
+    "actual": 137500.0,
+    "predicted": 135930.5,
+    "error": 1569.5,
+    "abs_error_pct": 1.14,
+    "neighborhood": "BrkSide",
+    "gr_liv_area": 1513.0
+  },
+  {
+    "actual": 213500.0,
+    "predicted": 206802.31,
+    "error": 6697.69,
+    "abs_error_pct": 3.14,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1797.0
+  },
+  {
+    "actual": 119000.0,
+    "predicted": 118675.88,
+    "error": 324.12,
+    "abs_error_pct": 0.27,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 804.0
+  },
+  {
+    "actual": 107900.0,
+    "predicted": 113344.21,
+    "error": -5444.21,
+    "abs_error_pct": 5.05,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 901.0
+  },
+  {
+    "actual": 123000.0,
+    "predicted": 113337.36,
+    "error": 9662.64,
+    "abs_error_pct": 7.86,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 872.0
+  },
+  {
+    "actual": 112000.0,
+    "predicted": 134762.59,
+    "error": -22762.59,
+    "abs_error_pct": 20.32,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 1902.0
+  },
+  {
+    "actual": 284000.0,
+    "predicted": 325949.73,
+    "error": -41949.73,
+    "abs_error_pct": 14.77,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 1629.0
+  },
+  {
+    "actual": 133000.0,
+    "predicted": 139586.09,
+    "error": -6586.09,
+    "abs_error_pct": 4.95,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 767.0
+  },
+  {
+    "actual": 149000.0,
+    "predicted": 144732.52,
+    "error": 4267.48,
+    "abs_error_pct": 2.86,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 848.0
+  },
+  {
+    "actual": 169000.0,
+    "predicted": 177956.75,
+    "error": -8956.75,
+    "abs_error_pct": 5.3,
+    "neighborhood": "Gilbert",
+    "gr_liv_area": 1600.0
+  },
+  {
+    "actual": 207000.0,
+    "predicted": 183052.47,
+    "error": 23947.53,
+    "abs_error_pct": 11.57,
+    "neighborhood": "BrkSide",
+    "gr_liv_area": 1848.0
+  },
+  {
+    "actual": 175000.0,
+    "predicted": 188320.09,
+    "error": -13320.09,
+    "abs_error_pct": 7.61,
+    "neighborhood": "Timber",
+    "gr_liv_area": 1412.0
+  },
+  {
+    "actual": 137000.0,
+    "predicted": 129910.09,
+    "error": 7089.91,
+    "abs_error_pct": 5.18,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 935.0
+  },
+  {
+    "actual": 236000.0,
+    "predicted": 227804.26,
+    "error": 8195.74,
+    "abs_error_pct": 3.47,
+    "neighborhood": "Gilbert",
+    "gr_liv_area": 2256.0
+  },
+  {
+    "actual": 79500.0,
+    "predicted": 98536.34,
+    "error": -19036.34,
+    "abs_error_pct": 23.95,
+    "neighborhood": "BrkSide",
+    "gr_liv_area": 935.0
+  },
+  {
+    "actual": 144000.0,
+    "predicted": 151789.23,
+    "error": -7789.23,
+    "abs_error_pct": 5.41,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1099.0
+  },
+  {
+    "actual": 162900.0,
+    "predicted": 181402.78,
+    "error": -18502.78,
+    "abs_error_pct": 11.36,
+    "neighborhood": "NWAmes",
+    "gr_liv_area": 1664.0
+  },
+  {
+    "actual": 185900.0,
+    "predicted": 181741.33,
+    "error": 4158.67,
+    "abs_error_pct": 2.24,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1582.0
+  },
+  {
+    "actual": 369900.0,
+    "predicted": 366227.88,
+    "error": 3672.12,
+    "abs_error_pct": 0.99,
+    "neighborhood": "Timber",
+    "gr_liv_area": 2028.0
+  },
+  {
+    "actual": 197900.0,
+    "predicted": 199740.4,
+    "error": -1840.4,
+    "abs_error_pct": 0.93,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1779.0
+  },
+  {
+    "actual": 104000.0,
+    "predicted": 111720.49,
+    "error": -7720.49,
+    "abs_error_pct": 7.42,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 2229.0
+  },
+  {
+    "actual": 35311.0,
+    "predicted": 66553.12,
+    "error": -31242.12,
+    "abs_error_pct": 88.48,
+    "neighborhood": "IDOTRR",
+    "gr_liv_area": 480.0
+  },
+  {
+    "actual": 337500.0,
+    "predicted": 341061.58,
+    "error": -3561.58,
+    "abs_error_pct": 1.06,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 1718.0
+  },
+  {
+    "actual": 367294.0,
+    "predicted": 327354.07,
+    "error": 39939.93,
+    "abs_error_pct": 10.87,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 1702.0
+  },
+  {
+    "actual": 130250.0,
+    "predicted": 128943.38,
+    "error": 1306.62,
+    "abs_error_pct": 1.0,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 938.0
+  },
+  {
+    "actual": 230000.0,
+    "predicted": 234747.07,
+    "error": -4747.07,
+    "abs_error_pct": 2.06,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1654.0
+  },
+  {
+    "actual": 755000.0,
+    "predicted": 485073.73,
+    "error": 269926.27,
+    "abs_error_pct": 35.75,
+    "neighborhood": "NoRidge",
+    "gr_liv_area": 4316.0
+  },
+  {
+    "actual": 403000.0,
+    "predicted": 370291.46,
+    "error": 32708.54,
+    "abs_error_pct": 8.12,
+    "neighborhood": "NoRidge",
+    "gr_liv_area": 2794.0
+  },
+  {
+    "actual": 132000.0,
+    "predicted": 131704.33,
+    "error": 295.67,
+    "abs_error_pct": 0.22,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 928.0
+  },
+  {
+    "actual": 178000.0,
+    "predicted": 172834.76,
+    "error": 5165.24,
+    "abs_error_pct": 2.9,
+    "neighborhood": "SawyerW",
+    "gr_liv_area": 1732.0
+  },
+  {
+    "actual": 136500.0,
+    "predicted": 160722.33,
+    "error": -24222.33,
+    "abs_error_pct": 17.75,
+    "neighborhood": "SWISU",
+    "gr_liv_area": 1694.0
+  },
+  {
+    "actual": 145000.0,
+    "predicted": 141405.22,
+    "error": 3594.78,
+    "abs_error_pct": 2.48,
+    "neighborhood": "Gilbert",
+    "gr_liv_area": 1056.0
+  },
+  {
+    "actual": 123000.0,
+    "predicted": 128963.22,
+    "error": -5963.22,
+    "abs_error_pct": 4.85,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 900.0
+  },
+  {
+    "actual": 250000.0,
+    "predicted": 217584.8,
+    "error": 32415.2,
+    "abs_error_pct": 12.97,
+    "neighborhood": "Crawfor",
+    "gr_liv_area": 2057.0
+  },
+  {
+    "actual": 187100.0,
+    "predicted": 203198.55,
+    "error": -16098.55,
+    "abs_error_pct": 8.6,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1430.0
+  },
+  {
+    "actual": 133900.0,
+    "predicted": 119980.12,
+    "error": 13919.88,
+    "abs_error_pct": 10.4,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 768.0
+  },
+  {
+    "actual": 67000.0,
+    "predicted": 72846.24,
+    "error": -5846.24,
+    "abs_error_pct": 8.73,
+    "neighborhood": "Edwards",
+    "gr_liv_area": 864.0
+  },
+  {
+    "actual": 137500.0,
+    "predicted": 121927.01,
+    "error": 15572.99,
+    "abs_error_pct": 11.33,
+    "neighborhood": "Crawfor",
+    "gr_liv_area": 1180.0
+  },
+  {
+    "actual": 155000.0,
+    "predicted": 141409.26,
+    "error": 13590.74,
+    "abs_error_pct": 8.77,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1348.0
+  },
+  {
+    "actual": 200624.0,
+    "predicted": 219944.1,
+    "error": -19320.1,
+    "abs_error_pct": 9.63,
+    "neighborhood": "Crawfor",
+    "gr_liv_area": 2515.0
+  },
+  {
+    "actual": 154300.0,
+    "predicted": 152040.75,
+    "error": 2259.25,
+    "abs_error_pct": 1.46,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 2274.0
+  },
+  {
+    "actual": 91000.0,
+    "predicted": 93981.58,
+    "error": -2981.58,
+    "abs_error_pct": 3.28,
+    "neighborhood": "IDOTRR",
+    "gr_liv_area": 1077.0
+  },
+  {
+    "actual": 136000.0,
+    "predicted": 136692.11,
+    "error": -692.11,
+    "abs_error_pct": 0.51,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1792.0
+  },
+  {
+    "actual": 108959.0,
+    "predicted": 129720.06,
+    "error": -20761.06,
+    "abs_error_pct": 19.05,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 1258.0
+  },
+  {
+    "actual": 140000.0,
+    "predicted": 154688.76,
+    "error": -14688.76,
+    "abs_error_pct": 10.49,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1375.0
+  },
+  {
+    "actual": 86000.0,
+    "predicted": 91937.01,
+    "error": -5937.01,
+    "abs_error_pct": 6.9,
+    "neighborhood": "Edwards",
+    "gr_liv_area": 605.0
+  },
+  {
+    "actual": 131400.0,
+    "predicted": 138932.81,
+    "error": -7532.81,
+    "abs_error_pct": 5.73,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 1144.0
+  },
+  {
+    "actual": 179900.0,
+    "predicted": 202019.57,
+    "error": -22119.57,
+    "abs_error_pct": 12.3,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1234.0
+  },
+  {
+    "actual": 144000.0,
+    "predicted": 147199.63,
+    "error": -3199.63,
+    "abs_error_pct": 2.22,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 1056.0
+  },
+  {
+    "actual": 293077.0,
+    "predicted": 282977.93,
+    "error": 10099.07,
+    "abs_error_pct": 3.45,
+    "neighborhood": "Timber",
+    "gr_liv_area": 1646.0
+  },
+  {
+    "actual": 144500.0,
+    "predicted": 155364.5,
+    "error": -10864.5,
+    "abs_error_pct": 7.52,
+    "neighborhood": "Edwards",
+    "gr_liv_area": 1526.0
+  },
+  {
+    "actual": 118500.0,
+    "predicted": 112063.42,
+    "error": 6436.58,
+    "abs_error_pct": 5.43,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1216.0
+  },
+  {
+    "actual": 141000.0,
+    "predicted": 131241.55,
+    "error": 9758.45,
+    "abs_error_pct": 6.92,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1800.0
+  },
+  {
+    "actual": 239000.0,
+    "predicted": 214604.77,
+    "error": 24395.23,
+    "abs_error_pct": 10.21,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1950.0
+  },
+  {
+    "actual": 276000.0,
+    "predicted": 360678.39,
+    "error": -84678.39,
+    "abs_error_pct": 30.68,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 2574.0
+  },
+  {
+    "actual": 556581.0,
+    "predicted": 421382.74,
+    "error": 135198.26,
+    "abs_error_pct": 24.29,
+    "neighborhood": "StoneBr",
+    "gr_liv_area": 2868.0
+  },
+  {
+    "actual": 244400.0,
+    "predicted": 217043.31,
+    "error": 27356.69,
+    "abs_error_pct": 11.19,
+    "neighborhood": "ClearCr",
+    "gr_liv_area": 2403.0
+  },
+  {
+    "actual": 360000.0,
+    "predicted": 357532.77,
+    "error": 2467.23,
+    "abs_error_pct": 0.69,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 1944.0
+  },
+  {
+    "actual": 103200.0,
+    "predicted": 97200.32,
+    "error": 5999.68,
+    "abs_error_pct": 5.81,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 882.0
+  },
+  {
+    "actual": 102000.0,
+    "predicted": 109148.5,
+    "error": -7148.5,
+    "abs_error_pct": 7.01,
+    "neighborhood": "SWISU",
+    "gr_liv_area": 1522.0
+  },
+  {
+    "actual": 151000.0,
+    "predicted": 150073.26,
+    "error": 926.74,
+    "abs_error_pct": 0.61,
+    "neighborhood": "Blueste",
+    "gr_liv_area": 1556.0
+  },
+  {
+    "actual": 285000.0,
+    "predicted": 308563.27,
+    "error": -23563.27,
+    "abs_error_pct": 8.27,
+    "neighborhood": "NoRidge",
+    "gr_liv_area": 2872.0
+  },
+  {
+    "actual": 134432.0,
+    "predicted": 128936.3,
+    "error": 5495.7,
+    "abs_error_pct": 4.09,
+    "neighborhood": "ClearCr",
+    "gr_liv_area": 1588.0
+  },
+  {
+    "actual": 113000.0,
+    "predicted": 123205.09,
+    "error": -10205.09,
+    "abs_error_pct": 9.03,
+    "neighborhood": "Edwards",
+    "gr_liv_area": 1487.0
+  },
+  {
+    "actual": 187500.0,
+    "predicted": 215443.37,
+    "error": -27943.37,
+    "abs_error_pct": 14.9,
+    "neighborhood": "Timber",
+    "gr_liv_area": 1717.0
+  },
+  {
+    "actual": 125500.0,
+    "predicted": 123213.36,
+    "error": 2286.64,
+    "abs_error_pct": 1.82,
+    "neighborhood": "IDOTRR",
+    "gr_liv_area": 1360.0
+  },
+  {
+    "actual": 177500.0,
+    "predicted": 162901.23,
+    "error": 14598.77,
+    "abs_error_pct": 8.22,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1573.0
+  },
+  {
+    "actual": 179900.0,
+    "predicted": 160070.69,
+    "error": 19829.31,
+    "abs_error_pct": 11.02,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1265.0
+  },
+  {
+    "actual": 55993.0,
+    "predicted": 96185.73,
+    "error": -40192.73,
+    "abs_error_pct": 71.78,
+    "neighborhood": "IDOTRR",
+    "gr_liv_area": 1044.0
+  },
+  {
+    "actual": 132500.0,
+    "predicted": 126183.63,
+    "error": 6316.37,
+    "abs_error_pct": 4.77,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 954.0
+  },
+  {
+    "actual": 135000.0,
+    "predicted": 143695.98,
+    "error": -8695.98,
+    "abs_error_pct": 6.44,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 1389.0
+  },
+  {
+    "actual": 255000.0,
+    "predicted": 256946.06,
+    "error": -1946.06,
+    "abs_error_pct": 0.76,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1989.0
+  },
+  {
+    "actual": 140000.0,
+    "predicted": 142614.69,
+    "error": -2614.69,
+    "abs_error_pct": 1.87,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 1710.0
+  },
+  {
+    "actual": 271000.0,
+    "predicted": 280557.06,
+    "error": -9557.06,
+    "abs_error_pct": 3.53,
+    "neighborhood": "Mitchel",
+    "gr_liv_area": 1689.0
+  },
+  {
+    "actual": 246578.0,
+    "predicted": 225941.0,
+    "error": 20637.0,
+    "abs_error_pct": 8.37,
+    "neighborhood": "Blmngtn",
+    "gr_liv_area": 1500.0
+  },
+  {
+    "actual": 202500.0,
+    "predicted": 192688.06,
+    "error": 9811.94,
+    "abs_error_pct": 4.85,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 1368.0
+  },
+  {
+    "actual": 75000.0,
+    "predicted": 89136.24,
+    "error": -14136.24,
+    "abs_error_pct": 18.85,
+    "neighborhood": "MeadowV",
+    "gr_liv_area": 1092.0
+  },
+  {
+    "actual": 122500.0,
+    "predicted": 129326.12,
+    "error": -6826.12,
+    "abs_error_pct": 5.57,
+    "neighborhood": "BrDale",
+    "gr_liv_area": 1365.0
+  },
+  {
+    "actual": 108480.0,
+    "predicted": 109012.14,
+    "error": -532.14,
+    "abs_error_pct": 0.49,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 1073.0
+  },
+  {
+    "actual": 160000.0,
+    "predicted": 146290.46,
+    "error": 13709.54,
+    "abs_error_pct": 8.57,
+    "neighborhood": "Crawfor",
+    "gr_liv_area": 1308.0
+  },
+  {
+    "actual": 171000.0,
+    "predicted": 151069.75,
+    "error": 19930.25,
+    "abs_error_pct": 11.66,
+    "neighborhood": "Mitchel",
+    "gr_liv_area": 1118.0
+  },
+  {
+    "actual": 196000.0,
+    "predicted": 184173.98,
+    "error": 11826.02,
+    "abs_error_pct": 6.03,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 1306.0
+  },
+  {
+    "actual": 225000.0,
+    "predicted": 169405.63,
+    "error": 55594.37,
+    "abs_error_pct": 24.71,
+    "neighborhood": "Edwards",
+    "gr_liv_area": 2008.0
+  },
+  {
+    "actual": 197000.0,
+    "predicted": 202633.65,
+    "error": -5633.65,
+    "abs_error_pct": 2.86,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1247.0
+  },
+  {
+    "actual": 40000.0,
+    "predicted": 83596.78,
+    "error": -43596.78,
+    "abs_error_pct": 108.99,
+    "neighborhood": "IDOTRR",
+    "gr_liv_area": 1317.0
+  },
+  {
+    "actual": 172500.0,
+    "predicted": 204493.3,
+    "error": -31993.3,
+    "abs_error_pct": 18.55,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1739.0
+  },
+  {
+    "actual": 154900.0,
+    "predicted": 127320.37,
+    "error": 27579.63,
+    "abs_error_pct": 17.8,
+    "neighborhood": "Crawfor",
+    "gr_liv_area": 1343.0
+  },
+  {
+    "actual": 280000.0,
+    "predicted": 253160.78,
+    "error": 26839.22,
+    "abs_error_pct": 9.59,
+    "neighborhood": "ClearCr",
+    "gr_liv_area": 1533.0
+  },
+  {
+    "actual": 175000.0,
+    "predicted": 195318.14,
+    "error": -20318.14,
+    "abs_error_pct": 11.61,
+    "neighborhood": "Gilbert",
+    "gr_liv_area": 1446.0
+  },
+  {
+    "actual": 147000.0,
+    "predicted": 118344.66,
+    "error": 28655.34,
+    "abs_error_pct": 19.49,
+    "neighborhood": "IDOTRR",
+    "gr_liv_area": 1344.0
+  },
+  {
+    "actual": 315000.0,
+    "predicted": 319374.9,
+    "error": -4374.9,
+    "abs_error_pct": 1.39,
+    "neighborhood": "NoRidge",
+    "gr_liv_area": 2630.0
+  },
+  {
+    "actual": 185000.0,
+    "predicted": 194330.65,
+    "error": -9330.65,
+    "abs_error_pct": 5.04,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1337.0
+  },
+  {
+    "actual": 135500.0,
+    "predicted": 123351.12,
+    "error": 12148.88,
+    "abs_error_pct": 8.97,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 980.0
+  },
+  {
+    "actual": 239500.0,
+    "predicted": 240512.04,
+    "error": -1012.04,
+    "abs_error_pct": 0.42,
+    "neighborhood": "SawyerW",
+    "gr_liv_area": 2020.0
+  },
+  {
+    "actual": 139000.0,
+    "predicted": 134966.3,
+    "error": 4033.7,
+    "abs_error_pct": 2.9,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 1121.0
+  },
+  {
+    "actual": 140000.0,
+    "predicted": 153022.73,
+    "error": -13022.73,
+    "abs_error_pct": 9.3,
+    "neighborhood": "SWISU",
+    "gr_liv_area": 1595.0
+  },
+  {
+    "actual": 110000.0,
+    "predicted": 116037.54,
+    "error": -6037.54,
+    "abs_error_pct": 5.49,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 892.0
+  },
+  {
+    "actual": 225000.0,
+    "predicted": 239498.47,
+    "error": -14498.47,
+    "abs_error_pct": 6.44,
+    "neighborhood": "SawyerW",
+    "gr_liv_area": 2243.0
+  },
+  {
+    "actual": 143500.0,
+    "predicted": 145211.09,
+    "error": -1711.09,
+    "abs_error_pct": 1.19,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 1285.0
+  },
+  {
+    "actual": 128950.0,
+    "predicted": 122889.97,
+    "error": 6060.03,
+    "abs_error_pct": 4.7,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1225.0
+  },
+  {
+    "actual": 172500.0,
+    "predicted": 152286.39,
+    "error": 20213.61,
+    "abs_error_pct": 11.72,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1471.0
+  },
+  {
+    "actual": 241500.0,
+    "predicted": 229468.95,
+    "error": 12031.05,
+    "abs_error_pct": 4.98,
+    "neighborhood": "ClearCr",
+    "gr_liv_area": 1363.0
+  },
+  {
+    "actual": 262500.0,
+    "predicted": 254163.63,
+    "error": 8336.37,
+    "abs_error_pct": 3.18,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1566.0
+  },
+  {
+    "actual": 194201.0,
+    "predicted": 207010.5,
+    "error": -12809.5,
+    "abs_error_pct": 6.6,
+    "neighborhood": "Blmngtn",
+    "gr_liv_area": 1402.0
+  },
+  {
+    "actual": 143000.0,
+    "predicted": 145036.84,
+    "error": -2036.84,
+    "abs_error_pct": 1.42,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1144.0
+  },
+  {
+    "actual": 130000.0,
+    "predicted": 121594.1,
+    "error": 8405.9,
+    "abs_error_pct": 6.47,
+    "neighborhood": "ClearCr",
+    "gr_liv_area": 1352.0
+  },
+  {
+    "actual": 126000.0,
+    "predicted": 136145.61,
+    "error": -10145.61,
+    "abs_error_pct": 8.05,
+    "neighborhood": "Mitchel",
+    "gr_liv_area": 1734.0
+  },
+  {
+    "actual": 142500.0,
+    "predicted": 140268.94,
+    "error": 2231.06,
+    "abs_error_pct": 1.57,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 894.0
+  },
+  {
+    "actual": 254000.0,
+    "predicted": 216789.71,
+    "error": 37210.29,
+    "abs_error_pct": 14.65,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 1324.0
+  },
+  {
+    "actual": 217500.0,
+    "predicted": 203810.42,
+    "error": 13689.58,
+    "abs_error_pct": 6.29,
+    "neighborhood": "Crawfor",
+    "gr_liv_area": 1647.0
+  },
+  {
+    "actual": 66500.0,
+    "predicted": 99580.12,
+    "error": -33080.12,
+    "abs_error_pct": 49.74,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 1131.0
+  },
+  {
+    "actual": 201000.0,
+    "predicted": 223929.18,
+    "error": -22929.18,
+    "abs_error_pct": 11.41,
+    "neighborhood": "Timber",
+    "gr_liv_area": 1466.0
+  },
+  {
+    "actual": 155000.0,
+    "predicted": 145926.26,
+    "error": 9073.74,
+    "abs_error_pct": 5.85,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1215.0
+  },
+  {
+    "actual": 68400.0,
+    "predicted": 87672.18,
+    "error": -19272.18,
+    "abs_error_pct": 28.18,
+    "neighborhood": "IDOTRR",
+    "gr_liv_area": 1128.0
+  },
+  {
+    "actual": 64500.0,
+    "predicted": 108061.11,
+    "error": -43561.11,
+    "abs_error_pct": 67.54,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 968.0
+  },
+  {
+    "actual": 173000.0,
+    "predicted": 162974.87,
+    "error": 10025.13,
+    "abs_error_pct": 5.79,
+    "neighborhood": "NWAmes",
+    "gr_liv_area": 1632.0
+  },
+  {
+    "actual": 102776.0,
+    "predicted": 96556.09,
+    "error": 6219.91,
+    "abs_error_pct": 6.05,
+    "neighborhood": "IDOTRR",
+    "gr_liv_area": 1178.0
+  },
+  {
+    "actual": 84900.0,
+    "predicted": 107087.18,
+    "error": -22187.18,
+    "abs_error_pct": 26.13,
+    "neighborhood": "Edwards",
+    "gr_liv_area": 930.0
+  },
+  {
+    "actual": 165600.0,
+    "predicted": 169986.7,
+    "error": -4386.7,
+    "abs_error_pct": 2.65,
+    "neighborhood": "Gilbert",
+    "gr_liv_area": 1501.0
+  },
+  {
+    "actual": 120000.0,
+    "predicted": 127305.52,
+    "error": -7305.52,
+    "abs_error_pct": 6.09,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 864.0
+  },
+  {
+    "actual": 135000.0,
+    "predicted": 122457.75,
+    "error": 12542.25,
+    "abs_error_pct": 9.29,
+    "neighborhood": "Edwards",
+    "gr_liv_area": 1229.0
+  },
+  {
+    "actual": 220000.0,
+    "predicted": 227362.23,
+    "error": -7362.23,
+    "abs_error_pct": 3.35,
+    "neighborhood": "SawyerW",
+    "gr_liv_area": 1915.0
+  },
+  {
+    "actual": 153575.0,
+    "predicted": 134308.45,
+    "error": 19266.55,
+    "abs_error_pct": 12.55,
+    "neighborhood": "BrkSide",
+    "gr_liv_area": 1396.0
+  },
+  {
+    "actual": 195400.0,
+    "predicted": 192393.15,
+    "error": 3006.85,
+    "abs_error_pct": 1.54,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1208.0
+  },
+  {
+    "actual": 147000.0,
+    "predicted": 155941.99,
+    "error": -8941.99,
+    "abs_error_pct": 6.08,
+    "neighborhood": "SawyerW",
+    "gr_liv_area": 996.0
+  },
+  {
+    "actual": 277000.0,
+    "predicted": 230236.93,
+    "error": 46763.07,
+    "abs_error_pct": 16.88,
+    "neighborhood": "SawyerW",
+    "gr_liv_area": 2062.0
+  },
+  {
+    "actual": 143000.0,
+    "predicted": 128476.78,
+    "error": 14523.22,
+    "abs_error_pct": 10.16,
+    "neighborhood": "SawyerW",
+    "gr_liv_area": 923.0
+  },
+  {
+    "actual": 105900.0,
+    "predicted": 109921.34,
+    "error": -4021.34,
+    "abs_error_pct": 3.8,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 720.0
+  },
+  {
+    "actual": 242000.0,
+    "predicted": 279296.24,
+    "error": -37296.24,
+    "abs_error_pct": 15.41,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 2978.0
+  },
+  {
+    "actual": 194500.0,
+    "predicted": 211936.41,
+    "error": -17436.41,
+    "abs_error_pct": 8.96,
+    "neighborhood": "SawyerW",
+    "gr_liv_area": 1744.0
+  },
+  {
+    "actual": 438780.0,
+    "predicted": 387393.25,
+    "error": 51386.75,
+    "abs_error_pct": 11.71,
+    "neighborhood": "StoneBr",
+    "gr_liv_area": 2945.0
+  },
+  {
+    "actual": 185000.0,
+    "predicted": 178443.14,
+    "error": 6556.86,
+    "abs_error_pct": 3.54,
+    "neighborhood": "NWAmes",
+    "gr_liv_area": 1876.0
+  },
+  {
+    "actual": 107500.0,
+    "predicted": 120131.79,
+    "error": -12631.79,
+    "abs_error_pct": 11.75,
+    "neighborhood": "Edwards",
+    "gr_liv_area": 1347.0
+  },
+  {
+    "actual": 165000.0,
+    "predicted": 148843.19,
+    "error": 16156.81,
+    "abs_error_pct": 9.79,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1431.0
+  },
+  {
+    "actual": 176000.0,
+    "predicted": 176577.49,
+    "error": -577.49,
+    "abs_error_pct": 0.33,
+    "neighborhood": "Timber",
+    "gr_liv_area": 1137.0
+  },
+  {
+    "actual": 129900.0,
+    "predicted": 141690.35,
+    "error": -11790.35,
+    "abs_error_pct": 9.08,
+    "neighborhood": "MeadowV",
+    "gr_liv_area": 1060.0
+  },
+  {
+    "actual": 115000.0,
+    "predicted": 97302.0,
+    "error": 17698.0,
+    "abs_error_pct": 15.39,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 789.0
+  },
+  {
+    "actual": 192140.0,
+    "predicted": 184721.05,
+    "error": 7418.95,
+    "abs_error_pct": 3.86,
+    "neighborhood": "Gilbert",
+    "gr_liv_area": 1838.0
+  },
+  {
+    "actual": 160000.0,
+    "predicted": 178250.24,
+    "error": -18250.24,
+    "abs_error_pct": 11.41,
+    "neighborhood": "Gilbert",
+    "gr_liv_area": 1472.0
+  },
+  {
+    "actual": 145000.0,
+    "predicted": 131920.57,
+    "error": 13079.43,
+    "abs_error_pct": 9.02,
+    "neighborhood": "BrkSide",
+    "gr_liv_area": 1505.0
+  },
+  {
+    "actual": 86000.0,
+    "predicted": 92119.51,
+    "error": -6119.51,
+    "abs_error_pct": 7.12,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 691.0
+  },
+  {
+    "actual": 158000.0,
+    "predicted": 141825.56,
+    "error": 16174.44,
+    "abs_error_pct": 10.24,
+    "neighborhood": "Sawyer",
+    "gr_liv_area": 1159.0
+  },
+  {
+    "actual": 127500.0,
+    "predicted": 141241.1,
+    "error": -13741.1,
+    "abs_error_pct": 10.78,
+    "neighborhood": "NPkVill",
+    "gr_liv_area": 1069.0
+  },
+  {
+    "actual": 115000.0,
+    "predicted": 120234.81,
+    "error": -5234.81,
+    "abs_error_pct": 4.55,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 1224.0
+  },
+  {
+    "actual": 119500.0,
+    "predicted": 116026.11,
+    "error": 3473.89,
+    "abs_error_pct": 2.91,
+    "neighborhood": "BrDale",
+    "gr_liv_area": 1302.0
+  },
+  {
+    "actual": 175900.0,
+    "predicted": 167485.49,
+    "error": 8414.51,
+    "abs_error_pct": 4.78,
+    "neighborhood": "SawyerW",
+    "gr_liv_area": 1603.0
+  },
+  {
+    "actual": 240000.0,
+    "predicted": 257014.98,
+    "error": -17014.98,
+    "abs_error_pct": 7.09,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 2090.0
+  },
+  {
+    "actual": 395000.0,
+    "predicted": 319155.56,
+    "error": 75844.44,
+    "abs_error_pct": 19.2,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 1973.0
+  },
+  {
+    "actual": 165000.0,
+    "predicted": 173213.92,
+    "error": -8213.92,
+    "abs_error_pct": 4.98,
+    "neighborhood": "Veenker",
+    "gr_liv_area": 1208.0
+  },
+  {
+    "actual": 128200.0,
+    "predicted": 129437.52,
+    "error": -1237.52,
+    "abs_error_pct": 0.97,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 894.0
+  },
+  {
+    "actual": 275000.0,
+    "predicted": 223913.27,
+    "error": 51086.73,
+    "abs_error_pct": 18.58,
+    "neighborhood": "SawyerW",
+    "gr_liv_area": 1644.0
+  },
+  {
+    "actual": 311872.0,
+    "predicted": 296051.47,
+    "error": 15820.53,
+    "abs_error_pct": 5.07,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1726.0
+  },
+  {
+    "actual": 214000.0,
+    "predicted": 211325.31,
+    "error": 2674.69,
+    "abs_error_pct": 1.25,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1933.0
+  },
+  {
+    "actual": 153500.0,
+    "predicted": 160610.6,
+    "error": -7110.6,
+    "abs_error_pct": 4.63,
+    "neighborhood": "Mitchel",
+    "gr_liv_area": 1337.0
+  },
+  {
+    "actual": 144000.0,
+    "predicted": 139748.75,
+    "error": 4251.25,
+    "abs_error_pct": 2.95,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 848.0
+  },
+  {
+    "actual": 115000.0,
+    "predicted": 119614.01,
+    "error": -4614.01,
+    "abs_error_pct": 4.01,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1005.0
+  },
+  {
+    "actual": 180000.0,
+    "predicted": 176708.31,
+    "error": 3291.69,
+    "abs_error_pct": 1.83,
+    "neighborhood": "Gilbert",
+    "gr_liv_area": 1430.0
+  },
+  {
+    "actual": 465000.0,
+    "predicted": 402658.15,
+    "error": 62341.85,
+    "abs_error_pct": 13.41,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 2076.0
+  },
+  {
+    "actual": 180000.0,
+    "predicted": 212368.98,
+    "error": -32368.98,
+    "abs_error_pct": 17.98,
+    "neighborhood": "StoneBr",
+    "gr_liv_area": 1337.0
+  },
+  {
+    "actual": 253000.0,
+    "predicted": 229066.05,
+    "error": 23933.95,
+    "abs_error_pct": 9.46,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1971.0
+  },
+  {
+    "actual": 85000.0,
+    "predicted": 90104.53,
+    "error": -5104.53,
+    "abs_error_pct": 6.01,
+    "neighborhood": "MeadowV",
+    "gr_liv_area": 1112.0
+  },
+  {
+    "actual": 101800.0,
+    "predicted": 101127.81,
+    "error": 672.19,
+    "abs_error_pct": 0.66,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1224.0
+  },
+  {
+    "actual": 148500.0,
+    "predicted": 133315.84,
+    "error": 15184.16,
+    "abs_error_pct": 10.23,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1002.0
+  },
+  {
+    "actual": 137500.0,
+    "predicted": 152112.57,
+    "error": -14612.57,
+    "abs_error_pct": 10.63,
+    "neighborhood": "Edwards",
+    "gr_liv_area": 1709.0
+  },
+  {
+    "actual": 318061.0,
+    "predicted": 302494.25,
+    "error": 15566.75,
+    "abs_error_pct": 4.89,
+    "neighborhood": "NridgHt",
+    "gr_liv_area": 1869.0
+  },
+  {
+    "actual": 143000.0,
+    "predicted": 223526.97,
+    "error": -80526.97,
+    "abs_error_pct": 56.31,
+    "neighborhood": "ClearCr",
+    "gr_liv_area": 1473.0
+  },
+  {
+    "actual": 140000.0,
+    "predicted": 144095.23,
+    "error": -4095.23,
+    "abs_error_pct": 2.93,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 1558.0
+  },
+  {
+    "actual": 192500.0,
+    "predicted": 212143.88,
+    "error": -19643.88,
+    "abs_error_pct": 10.2,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1776.0
+  },
+  {
+    "actual": 92000.0,
+    "predicted": 92986.48,
+    "error": -986.48,
+    "abs_error_pct": 1.07,
+    "neighborhood": "MeadowV",
+    "gr_liv_area": 630.0
+  },
+  {
+    "actual": 197000.0,
+    "predicted": 189826.15,
+    "error": 7173.85,
+    "abs_error_pct": 3.64,
+    "neighborhood": "Somerst",
+    "gr_liv_area": 1576.0
+  },
+  {
+    "actual": 109500.0,
+    "predicted": 115076.24,
+    "error": -5576.24,
+    "abs_error_pct": 5.09,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 792.0
+  },
+  {
+    "actual": 297000.0,
+    "predicted": 311071.71,
+    "error": -14071.71,
+    "abs_error_pct": 4.74,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1718.0
+  },
+  {
+    "actual": 185750.0,
+    "predicted": 180528.4,
+    "error": 5221.6,
+    "abs_error_pct": 2.81,
+    "neighborhood": "NWAmes",
+    "gr_liv_area": 1489.0
+  },
+  {
+    "actual": 230000.0,
+    "predicted": 212331.86,
+    "error": 17668.14,
+    "abs_error_pct": 7.68,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1840.0
+  },
+  {
+    "actual": 89471.0,
+    "predicted": 122419.86,
+    "error": -32948.86,
+    "abs_error_pct": 36.83,
+    "neighborhood": "OldTown",
+    "gr_liv_area": 1131.0
+  },
+  {
+    "actual": 260000.0,
+    "predicted": 244764.8,
+    "error": 15235.2,
+    "abs_error_pct": 5.86,
+    "neighborhood": "StoneBr",
+    "gr_liv_area": 1530.0
+  },
+  {
+    "actual": 189000.0,
+    "predicted": 183386.03,
+    "error": 5613.97,
+    "abs_error_pct": 2.97,
+    "neighborhood": "CollgCr",
+    "gr_liv_area": 1456.0
+  },
+  {
+    "actual": 108000.0,
+    "predicted": 119653.09,
+    "error": -11653.09,
+    "abs_error_pct": 10.79,
+    "neighborhood": "Edwards",
+    "gr_liv_area": 1510.0
+  },
+  {
+    "actual": 124500.0,
+    "predicted": 123217.23,
+    "error": 1282.77,
+    "abs_error_pct": 1.03,
+    "neighborhood": "NAmes",
+    "gr_liv_area": 864.0
+  }
+]

@@ -1,0 +1,12 @@
+# DVC ignore rules
+.git
+.venv
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+.ruff_cache
+mlops/mlruns
+frontend/.next
+frontend/node_modules
+houseprice_ai.db

@@ -1,0 +1,221 @@
+{
+  "source": "OpenML Ames Housing Dataset (Dean De Cock, Truman State University)",
+  "rows": 1460,
+  "total_columns": 81,
+  "target": "SalePrice",
+  "numeric_features_count": 22,
+  "categorical_features_count": 10,
+  "numeric_features": [
+    "GrLivArea",
+    "TotalBsmtSF",
+    "1stFlrSF",
+    "2ndFlrSF",
+    "YearBuilt",
+    "YearRemodAdd",
+    "OverallQual",
+    "OverallCond",
+    "FullBath",
+    "HalfBath",
+    "BsmtFullBath",
+    "BedroomAbvGr",
+    "TotRmsAbvGrd",
+    "Fireplaces",
+    "GarageCars",
+    "GarageArea",
+    "LotArea",
+    "LotFrontage",
+    "WoodDeckSF",
+    "OpenPorchSF",
+    "MoSold",
+    "YrSold"
+  ],
+  "categorical_features": [
+    "Neighborhood",
+    "BldgType",
+    "HouseStyle",
+    "MSZoning",
+    "KitchenQual",
+    "BsmtQual",
+    "HeatingQC",
+    "CentralAir",
+    "GarageType",
+    "SaleCondition"
+  ],
+  "target_distribution": {
+    "count": 1460,
+    "mean": 180921.2,
+    "std": 79442.5,
+    "min": 34900.0,
+    "p25": 129975.0,
+    "median": 163000.0,
+    "p75": 214000.0,
+    "max": 755000.0,
+    "skewness": 1.8829,
+    "kurtosis": 6.5363,
+    "log_skewness": 0.1213
+  },
+  "missing_values": {
+    "GrLivArea": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "TotalBsmtSF": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "1stFlrSF": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "2ndFlrSF": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "YearBuilt": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "YearRemodAdd": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "OverallQual": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "OverallCond": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "FullBath": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "HalfBath": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "BsmtFullBath": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "BedroomAbvGr": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "TotRmsAbvGrd": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "Fireplaces": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "GarageCars": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "GarageArea": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "LotArea": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "LotFrontage": {
+      "count": 259,
+      "percentage": 17.74
+    },
+    "WoodDeckSF": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "OpenPorchSF": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "MoSold": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "YrSold": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "Neighborhood": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "BldgType": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "HouseStyle": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "MSZoning": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "KitchenQual": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "BsmtQual": {
+      "count": 37,
+      "percentage": 2.53
+    },
+    "HeatingQC": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "CentralAir": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "GarageType": {
+      "count": 81,
+      "percentage": 5.55
+    },
+    "SaleCondition": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "SalePrice": {
+      "count": 0,
+      "percentage": 0.0
+    }
+  },
+  "duplicates_count": 1,
+  "data_quality_score": 99.7,
+  "data_quality_methodology": "Score = 100 - (Missing_Rate * 40 + Duplicate_Rate * 30), bounded [0, 100].",
+  "unique_neighborhoods": [
+    "Blmngtn",
+    "Blueste",
+    "BrDale",
+    "BrkSide",
+    "ClearCr",
+    "CollgCr",
+    "Crawfor",
+    "Edwards",
+    "Gilbert",
+    "IDOTRR",
+    "MeadowV",
+    "Mitchel",
+    "NAmes",
+    "NPkVill",
+    "NWAmes",
+    "NoRidge",
+    "NridgHt",
+    "OldTown",
+    "SWISU",
+    "Sawyer",
+    "SawyerW",
+    "Somerst",
+    "StoneBr",
+    "Timber",
+    "Veenker"
+  ]
+}

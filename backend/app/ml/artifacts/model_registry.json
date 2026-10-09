@@ -1,0 +1,248 @@
+{
+  "current_production_model": "CatBoost",
+  "production_version": "v1.0.0",
+  "baseline_model": "Linear Regression",
+  "registered_models": [
+    {
+      "name": "CatBoost",
+      "version": "v1.0.0",
+      "stage": "Production",
+      "cv_metrics": {
+        "rmse_mean": 28152.43,
+        "mae_mean": 16080.3,
+        "r2_mean": 0.8532
+      },
+      "test_metrics": {
+        "rmse": 28945.66,
+        "mae": 15945.06,
+        "r2": 0.8908,
+        "mape": 9.19,
+        "observed_coverage_90": 0.9212,
+        "mean_interval_width_90": 74464.94,
+        "observed_coverage_95": 0.9658,
+        "mean_interval_width_95": 105965.82
+      },
+      "artifact_path": "D:\\Documents\\Certifications\\INTERNSHIPS\\QSkills\\HOUSEPRICE AI\\backend\\app\\ml\\artifacts\\best_model.joblib",
+      "parameters": {},
+      "description": "Model trained on Ames Housing dataset with zero-leakage 3-way split preprocessing and Advanced architecture.",
+      "registered_at": "2026-10-08T07:15:14.127316+00:00"
+    },
+    {
+      "name": "Voting Ensemble",
+      "version": "v1.0.0",
+      "stage": "Archived",
+      "cv_metrics": {
+        "rmse_mean": 28286.18,
+        "mae_mean": 15937.94,
+        "r2_mean": 0.8512
+      },
+      "test_metrics": {
+        "rmse": 28515.16,
+        "mae": 16188.81,
+        "r2": 0.894,
+        "mape": 9.39,
+        "observed_coverage_90": 0.9041,
+        "mean_interval_width_90": 71373.86,
+        "observed_coverage_95": 0.9589,
+        "mean_interval_width_95": 112012.26
+      },
+      "artifact_path": "D:\\Documents\\Certifications\\INTERNSHIPS\\QSkills\\HOUSEPRICE AI\\backend\\app\\ml\\artifacts\\baseline_model.joblib",
+      "parameters": {},
+      "description": "Model trained on Ames Housing dataset with zero-leakage 3-way split preprocessing and Advanced architecture.",
+      "registered_at": "2026-10-08T07:15:14.129303+00:00"
+    },
+    {
+      "name": "XGBoost",
+      "version": "v1.0.0",
+      "stage": "Validation",
+      "cv_metrics": {
+        "rmse_mean": 28484.25,
+        "mae_mean": 16262.09,
+        "r2_mean": 0.8491
+      },
+      "test_metrics": {
+        "rmse": 26920.71,
+        "mae": 16274.21,
+        "r2": 0.9055,
+        "mape": 9.48,
+        "observed_coverage_90": 0.9075,
+        "mean_interval_width_90": 75972.32,
+        "observed_coverage_95": 0.9589,
+        "mean_interval_width_95": 106708.26
+      },
+      "artifact_path": "D:\\Documents\\Certifications\\INTERNSHIPS\\QSkills\\HOUSEPRICE AI\\backend\\app\\ml\\artifacts\\baseline_model.joblib",
+      "parameters": {},
+      "description": "Model trained on Ames Housing dataset with zero-leakage 3-way split preprocessing and Advanced architecture.",
+      "registered_at": "2026-10-08T07:15:14.130853+00:00"
+    },
+    {
+      "name": "LightGBM",
+      "version": "v1.0.0",
+      "stage": "Validation",
+      "cv_metrics": {
+        "rmse_mean": 28806.88,
+        "mae_mean": 16514.08,
+        "r2_mean": 0.8487
+      },
+      "test_metrics": {
+        "rmse": 32187.98,
+        "mae": 17610.76,
+        "r2": 0.8649,
+        "mape": 10.03,
+        "observed_coverage_90": 0.9075,
+        "mean_interval_width_90": 75359.66,
+        "observed_coverage_95": 0.9521,
+        "mean_interval_width_95": 113209.94
+      },
+      "artifact_path": "D:\\Documents\\Certifications\\INTERNSHIPS\\QSkills\\HOUSEPRICE AI\\backend\\app\\ml\\artifacts\\baseline_model.joblib",
+      "parameters": {},
+      "description": "Model trained on Ames Housing dataset with zero-leakage 3-way split preprocessing and Advanced architecture.",
+      "registered_at": "2026-10-08T07:15:14.132438+00:00"
+    },
+    {
+      "name": "Random Forest",
+      "version": "v1.0.0",
+      "stage": "Validation",
+      "cv_metrics": {
+        "rmse_mean": 30080.51,
+        "mae_mean": 17883.08,
+        "r2_mean": 0.8345
+      },
+      "test_metrics": {
+        "rmse": 30990.09,
+        "mae": 17626.7,
+        "r2": 0.8748,
+        "mape": 10.31,
+        "observed_coverage_90": 0.9384,
+        "mean_interval_width_90": 86209.3,
+        "observed_coverage_95": 0.9589,
+        "mean_interval_width_95": 113374.42
+      },
+      "artifact_path": "D:\\Documents\\Certifications\\INTERNSHIPS\\QSkills\\HOUSEPRICE AI\\backend\\app\\ml\\artifacts\\baseline_model.joblib",
+      "parameters": {},
+      "description": "Model trained on Ames Housing dataset with zero-leakage 3-way split preprocessing and Advanced architecture.",
+      "registered_at": "2026-10-08T07:15:14.134373+00:00"
+    },
+    {
+      "name": "Gradient Boosting",
+      "version": "v1.0.0",
+      "stage": "Validation",
+      "cv_metrics": {
+        "rmse_mean": 30116.81,
+        "mae_mean": 16944.91,
+        "r2_mean": 0.8314
+      },
+      "test_metrics": {
+        "rmse": 28541.8,
+        "mae": 16553.17,
+        "r2": 0.8938,
+        "mape": 9.72,
+        "observed_coverage_90": 0.9041,
+        "mean_interval_width_90": 73975.36,
+        "observed_coverage_95": 0.9658,
+        "mean_interval_width_95": 121436.36
+      },
+      "artifact_path": "D:\\Documents\\Certifications\\INTERNSHIPS\\QSkills\\HOUSEPRICE AI\\backend\\app\\ml\\artifacts\\baseline_model.joblib",
+      "parameters": {},
+      "description": "Model trained on Ames Housing dataset with zero-leakage 3-way split preprocessing and Advanced architecture.",
+      "registered_at": "2026-10-08T07:15:14.136513+00:00"
+    },
+    {
+      "name": "Linear Regression",
+      "version": "v1.0.0",
+      "stage": "Baseline",
+      "cv_metrics": {
+        "rmse_mean": 56095.76,
+        "mae_mean": 20211.18,
+        "r2_mean": -0.1476
+      },
+      "test_metrics": {
+        "rmse": 26626.92,
+        "mae": 17365.22,
+        "r2": 0.9076,
+        "mape": 10.21,
+        "observed_coverage_90": 0.8904,
+        "mean_interval_width_90": 75139.1,
+        "observed_coverage_95": 0.9555,
+        "mean_interval_width_95": 112754.88
+      },
+      "artifact_path": "D:\\Documents\\Certifications\\INTERNSHIPS\\QSkills\\HOUSEPRICE AI\\backend\\app\\ml\\artifacts\\baseline_model.joblib",
+      "parameters": {},
+      "description": "Model trained on Ames Housing dataset with zero-leakage 3-way split preprocessing and Baseline architecture.",
+      "registered_at": "2026-10-08T07:15:14.138588+00:00"
+    },
+    {
+      "name": "Ridge Regression",
+      "version": "v1.0.0",
+      "stage": "Validation",
+      "cv_metrics": {
+        "rmse_mean": 57724.02,
+        "mae_mean": 20606.3,
+        "r2_mean": -0.2224
+      },
+      "test_metrics": {
+        "rmse": 28362.01,
+        "mae": 18016.07,
+        "r2": 0.8951,
+        "mape": 10.64,
+        "observed_coverage_90": 0.8938,
+        "mean_interval_width_90": 74567.22,
+        "observed_coverage_95": 0.9589,
+        "mean_interval_width_95": 122104.34
+      },
+      "artifact_path": "D:\\Documents\\Certifications\\INTERNSHIPS\\QSkills\\HOUSEPRICE AI\\backend\\app\\ml\\artifacts\\baseline_model.joblib",
+      "parameters": {},
+      "description": "Model trained on Ames Housing dataset with zero-leakage 3-way split preprocessing and Baseline architecture.",
+      "registered_at": "2026-10-08T07:15:14.140320+00:00"
+    },
+    {
+      "name": "ElasticNet",
+      "version": "v1.0.0",
+      "stage": "Validation",
+      "cv_metrics": {
+        "rmse_mean": 57855.93,
+        "mae_mean": 20559.91,
+        "r2_mean": -0.2347
+      },
+      "test_metrics": {
+        "rmse": 28090.91,
+        "mae": 17741.51,
+        "r2": 0.8971,
+        "mape": 10.5,
+        "observed_coverage_90": 0.8904,
+        "mean_interval_width_90": 74569.62,
+        "observed_coverage_95": 0.9521,
+        "mean_interval_width_95": 116456.68
+      },
+      "artifact_path": "D:\\Documents\\Certifications\\INTERNSHIPS\\QSkills\\HOUSEPRICE AI\\backend\\app\\ml\\artifacts\\baseline_model.joblib",
+      "parameters": {},
+      "description": "Model trained on Ames Housing dataset with zero-leakage 3-way split preprocessing and Baseline architecture.",
+      "registered_at": "2026-10-08T07:15:14.142421+00:00"
+    },
+    {
+      "name": "Lasso",
+      "version": "v1.0.0",
+      "stage": "Validation",
+      "cv_metrics": {
+        "rmse_mean": 58335.1,
+        "mae_mean": 20516.74,
+        "r2_mean": -0.2668
+      },
+      "test_metrics": {
+        "rmse": 28535.03,
+        "mae": 17948.81,
+        "r2": 0.8938,
+        "mape": 10.66,
+        "observed_coverage_90": 0.887,
+        "mean_interval_width_90": 73289.8,
+        "observed_coverage_95": 0.9623,
+        "mean_interval_width_95": 118976.02
+      },
+      "artifact_path": "D:\\Documents\\Certifications\\INTERNSHIPS\\QSkills\\HOUSEPRICE AI\\backend\\app\\ml\\artifacts\\baseline_model.joblib",
+      "parameters": {},
+      "description": "Model trained on Ames Housing dataset with zero-leakage 3-way split preprocessing and Baseline architecture.",
+      "registered_at": "2026-10-08T07:15:14.144291+00:00"
+    }
+  ],
+  "last_updated": "2026-10-09T08:53:27.190945+00:00"
+}
